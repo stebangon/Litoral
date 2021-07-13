@@ -1,0 +1,223 @@
+
+@font-face {
+  /*
+  El nombre con el que identificaremos la fuente al llamarla en otras partes. 
+  Podemos poner lo que queramos, y es asi como la debemos mandar a llamar en otras propiedades Css 
+  */
+  font-family: 'Benne-Regular';
+
+  /* Antes de descargar el archivo, le decimos al buscador
+  que intente buscar en local la fuente con nombre
+  Rustico, Rustico Regular o Rustico-Regular */
+  src: local('BenneRegular'),
+       local('Benne Regular'),
+       local('Benne-Regular'),
+       /*Si no encontro nada en la maquina local, descargamos la fuente desde nuestra carpeta publica*/
+       url(assets/fonts/BENNE/Benne-Regular.ttf) format('truetype');
+}
+@font-face {
+  /*
+  El nombre con el que identificaremos la fuente al llamarla en otras partes. 
+  Podemos poner lo que queramos, y es asi como la debemos mandar a llamar en otras propiedades Css 
+  */
+  font-family: 'JimmySans-Brush';
+
+  /* Antes de descargar el archivo, le decimos al buscador
+  que intente buscar en local la fuente con nombre
+  Rustico, Rustico Regular o Rustico-Regular */
+  src: local('JimmySansBrush'),
+       local('JimmySans Brush'),
+       local('JimmySans-Brush'),
+       /*Si no encontro nada en la maquina local, descargamos la fuente desde nuestra carpeta publica*/
+       url(assets/fonts/JIMMYSANS/JimmySans-Brush.otf) format('truetype');
+}
+@font-face {
+  /*
+  El nombre con el que identificaremos la fuente al llamarla en otras partes. 
+  Podemos poner lo que queramos, y es asi como la debemos mandar a llamar en otras propiedades Css 
+  */
+  font-family: 'JimmySans-Rg';
+
+  /* Antes de descargar el archivo, le decimos al buscador
+  que intente buscar en local la fuente con nombre
+  Rustico, Rustico Regular o Rustico-Regular */
+  src: local('JimmySansRg'),
+       local('JimmySans Rg'),
+       local('JimmySans-Rg'),
+       /*Si no encontro nada en la maquina local, descargamos la fuente desde nuestra carpeta publica*/
+       url(assets/fonts/JIMMYSANS/JimmySans-Rg.otf) format('truetype');
+}
+@font-face {
+  /*
+  El nombre con el que identificaremos la fuente al llamarla en otras partes. 
+  Podemos poner lo que queramos, y es asi como la debemos mandar a llamar en otras propiedades Css 
+  */
+  font-family: 'OpenSans-Bold';
+
+  /* Antes de descargar el archivo, le decimos al buscador
+  que intente buscar en local la fuente con nombre
+  Rustico, Rustico Regular o Rustico-Regular */
+  src: local('OpenSansBold'),
+       local('OpenSans Bold'),
+       local('OpenSans-Bold'),
+       /*Si no encontro nada en la maquina local, descargamos la fuente desde nuestra carpeta publica*/
+       url(assets/fonts/OPENSANS/OpenSans-Bold.ttf) format('truetype');
+}
+@font-face {
+  /*
+  El nombre con el que identificaremos la fuente al llamarla en otras partes. 
+  Podemos poner lo que queramos, y es asi como la debemos mandar a llamar en otras propiedades Css 
+  */
+  font-family: 'OpenSans-BoldItalic';
+
+  /* Antes de descargar el archivo, le decimos al buscador
+  que intente buscar en local la fuente con nombre
+  Rustico, Rustico Regular o Rustico-Regular */
+  src: local('OpenSansBoldItalic'),
+       local('OpenSans BoldItalic'),
+       local('OpenSans-BoldItalic'),
+       /*Si no encontro nada en la maquina local, descargamos la fuente desde nuestra carpeta publica*/
+       url(assets/fonts/OPENSANS/OpenSans-BoldItalic.ttf) format('truetype');
+}
+@font-face {
+  /*
+  El nombre con el que identificaremos la fuente al llamarla en otras partes. 
+  Podemos poner lo que queramos, y es asi como la debemos mandar a llamar en otras propiedades Css 
+  */
+  font-family: 'OpenSans-ExtraBold';
+
+  /* Antes de descargar el archivo, le decimos al buscador
+  que intente buscar en local la fuente con nombre
+  Rustico, Rustico Regular o Rustico-Regular */
+  src: local('OpenSansExtraBold'),
+       local('OpenSans ExtraBold'),
+       local('OpenSans-ExtraBold'),
+       /*Si no encontro nada en la maquina local, descargamos la fuente desde nuestra carpeta publica*/
+       url(assets/fonts/OPENSANS/OpenSans-ExtraBold.ttf) format('truetype');
+}
+@font-face {
+  /*
+  El nombre con el que identificaremos la fuente al llamarla en otras partes. 
+  Podemos poner lo que queramos, y es asi como la debemos mandar a llamar en otras propiedades Css 
+  */
+  font-family: 'OpenSans-ExtraBoldItalic';
+
+  /* Antes de descargar el archivo, le decimos al buscador
+  que intente buscar en local la fuente con nombre
+  Rustico, Rustico Regular o Rustico-Regular */
+  src: local('OpenSansExtraBoldItalic'),
+       local('OpenSans ExtraBoldItalic'),
+       local('OpenSans-ExtraBoldItalic'),
+       /*Si no encontro nada en la maquina local, descargamos la fuente desde nuestra carpeta publica*/
+       url(assets/fonts/OPENSANS/OpenSans-ExtraBoldItalic.ttf) format('truetype');
+}
+@font-face {
+  /*
+  El nombre con el que identificaremos la fuente al llamarla en otras partes. 
+  Podemos poner lo que queramos, y es asi como la debemos mandar a llamar en otras propiedades Css 
+  */
+  font-family: 'OpenSans-Italic';
+
+  /* Antes de descargar el archivo, le decimos al buscador
+  que intente buscar en local la fuente con nombre
+  Rustico, Rustico Regular o Rustico-Regular */
+  src: local('OpenSansItalic'),
+       local('OpenSans Italic'),
+       local('OpenSans-Italic'),
+       /*Si no encontro nada en la maquina local, descargamos la fuente desde nuestra carpeta publica*/
+       url(assets/fonts/OPENSANS/OpenSans-Italic.ttf) format('truetype');
+}
+@font-face {
+  /*
+  El nombre con el que identificaremos la fuente al llamarla en otras partes. 
+  Podemos poner lo que queramos, y es asi como la debemos mandar a llamar en otras propiedades Css 
+  */
+  font-family: 'OpenSans-Light';
+
+  /* Antes de descargar el archivo, le decimos al buscador
+  que intente buscar en local la fuente con nombre
+  Rustico, Rustico Regular o Rustico-Regular */
+  src: local('OpenSansLight'),
+       local('OpenSans Light'),
+       local('OpenSans-Light'),
+       /*Si no encontro nada en la maquina local, descargamos la fuente desde nuestra carpeta publica*/
+       url(assets/fonts/OPENSANS/OpenSans-Light.ttf) format('truetype');
+}
+@font-face {
+  /*
+  El nombre con el que identificaremos la fuente al llamarla en otras partes. 
+  Podemos poner lo que queramos, y es asi como la debemos mandar a llamar en otras propiedades Css 
+  */
+  font-family: 'OpenSans-LightItalic';
+
+  /* Antes de descargar el archivo, le decimos al buscador
+  que intente buscar en local la fuente con nombre
+  Rustico, Rustico Regular o Rustico-Regular */
+  src: local('OpenSansLightItalic'),
+       local('OpenSans LightItalic'),
+       local('OpenSans-LightItalic'),
+       /*Si no encontro nada en la maquina local, descargamos la fuente desde nuestra carpeta publica*/
+       url(assets/fonts/OPENSANS/OpenSans-LightItalic.ttf) format('truetype');
+}
+@font-face {
+  /*
+  El nombre con el que identificaremos la fuente al llamarla en otras partes. 
+  Podemos poner lo que queramos, y es asi como la debemos mandar a llamar en otras propiedades Css 
+  */
+  font-family: 'OpenSans-Regular';
+
+  /* Antes de descargar el archivo, le decimos al buscador
+  que intente buscar en local la fuente con nombre
+  Rustico, Rustico Regular o Rustico-Regular */
+  src: local('OpenSansRegular'),
+       local('OpenSans Regular'),
+       local('OpenSans-Regular'),
+       /*Si no encontro nada en la maquina local, descargamos la fuente desde nuestra carpeta publica*/
+       url(assets/fonts/OPENSANS/OpenSans-Regular.ttf) format('truetype');
+}
+@font-face {
+  /*
+  El nombre con el que identificaremos la fuente al llamarla en otras partes. 
+  Podemos poner lo que queramos, y es asi como la debemos mandar a llamar en otras propiedades Css 
+  */
+  font-family: 'OpenSans-Semibold';
+
+  /* Antes de descargar el archivo, le decimos al buscador
+  que intente buscar en local la fuente con nombre
+  Rustico, Rustico Regular o Rustico-Regular */
+  src: local('OpenSansSemibold'),
+       local('OpenSans Semibold'),
+       local('OpenSans-Semibold'),
+       /*Si no encontro nada en la maquina local, descargamos la fuente desde nuestra carpeta publica*/
+       url(assets/fonts/OPENSANS/OpenSans-Semibold.ttf) format('truetype');
+}
+@font-face {
+  /*
+  El nombre con el que identificaremos la fuente al llamarla en otras partes. 
+  Podemos poner lo que queramos, y es asi como la debemos mandar a llamar en otras propiedades Css 
+  */
+  font-family: 'OpenSans-SemiboldItalic';
+
+  /* Antes de descargar el archivo, le decimos al buscador
+  que intente buscar en local la fuente con nombre
+  Rustico, Rustico Regular o Rustico-Regular */
+  src: local('OpenSansSemiboldItalic'),
+       local('OpenSans SemiboldItalic'),
+       local('OpenSans-SemiboldItalic'),
+       /*Si no encontro nada en la maquina local, descargamos la fuente desde nuestra carpeta publica*/
+       url(assets/fonts/OPENSANS/OpenSans-SemiboldItalic.ttf) format('truetype');
+}
+
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */

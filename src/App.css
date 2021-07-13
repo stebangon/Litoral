@@ -1,0 +1,123 @@
+.App{
+    color: rgb(21,76, 94);
+    font-family: OpenSans-Light;
+    /* width: fit-content; */
+}
+.jm-bg{
+    height: 100vh;
+    background-color: white;
+    padding: 0;
+}
+.cntr-bg
+{
+    background-image: url('./assets/BANNER INICIO.jpg');
+    height: 100vh;
+    background-size: cover;
+    /* clip-path: polygon(0% 25%, 36.5% 25%, 36.5% 12%, 67.5% 6%, 67.5% 25%, 100% 25%, 100% 99%, 0% 99%); */
+}
+.imgdesde
+{
+    position: absolute;
+    top: 70%;
+    left: 0%;
+    height: 140px;
+    width: 140px;
+    transform: translate(-10%, 50%);
+}
+.imgchuxchulub
+{
+    position: relative;
+    top: 0px;
+    right: 0px;
+    height: 50px;
+    width: auto;
+    transform: translate(0%, -200%);
+}
+.vivealmax-bg
+{
+    background-image: url('./assets/Recursos - LITORAL-56.svg');
+    height: 40vh;
+    width: 160vh;
+    background-size: contain;
+}
+.cotizar-bg
+{
+    background-image: url('./assets/fondoedificioi-08.svg');
+    height: 110vh;
+    width: 100%;
+    background-size: cover;
+}
+.amenidades-bg
+{
+    background-image: url('./assets/Plano Amenidades.jpg');
+    height: 70vh;
+    background-size: cover;
+    
+    padding: 0;
+    margin: 0;
+    /* clip-path: polygon(0% 25%, 36.5% 25%, 36.5% 12%, 67.5% 6%, 67.5% 25%, 100% 25%, 100% 99%, 0% 99%); */
+}
+/* Scroll lateral */
+#pinContainer {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-perspective: 1000;
+            perspective: 1000;
+}
+#slideContainer {
+    width: 400%; /* to contain 4 panels, each with 100% of window width */
+    height: 100%;
+}
+.panel {
+    height: 100%;
+    width: 25%; /* relative to parent -> 25% of 400% = 100% of window width */
+    float: left;
+}
+/* Termina scroll lateral */
+.vistaaerea-bg
+{
+    background-image: url('./assets/Banner Progreso.jpg');
+    height: 100vh;
+    background-size: cover;
+    
+    padding: 0;
+    margin: 0;
+    /* clip-path: polygon(0% 25%, 36.5% 25%, 36.5% 12%, 67.5% 6%, 67.5% 25%, 100% 25%, 100% 99%, 0% 99%); */
+}
+.imgLogoFooter
+{
+    position: relative;
+    top: 80%;
+    left: 0%;
+    height: 140px;
+    width: 140px;
+    transform: translate(110%, -40%);
+}
+.imgEstrellaFooter
+{
+    position: relative;
+    top: 110%;
+    right: -70%;
+    height: 50px;
+    width: auto;
+    transform: translate(0%, -70%);
+}
+.imgLogoFooter2
+{
+    position: relative;
+    top: 80%;
+    left: 0%;
+    height: 140px;
+    width: 140px;
+    transform: translate(110%, -55%);
+}
+.imgDep1
+{
+    position: absolute;
+    top: 120%;
+    left: 28%;
+    height: 50px;
+    width: auto;
+    transform: translate(20%, 120%);
+}
