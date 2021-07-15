@@ -242,7 +242,19 @@ function App() {
               style={{ textAlign: 'end', maxWidth: '142px' }}
             >
               <Row className="justify-content-center">
-                <img width="45px" height="45px" src={imgDescargarBrochure2} />
+                <a
+                  href="../assets/brochure/LITORAL-EXTENDED-DIGITAL.pdf"
+                  download
+                >
+                  <img
+                    width="45px"
+                    height="45px"
+                    src={imgDescargarBrochure2}
+                    style={{
+                      cursor: 'pointer',
+                    }}
+                  />
+                </a>
               </Row>
               <Row
                 className="pt-2 justify-content-center"
@@ -341,7 +353,12 @@ function App() {
                   style={{ textAlign: 'end', maxWidth: '100px' }}
                 >
                   <Row className="justify-content-center">
-                    <img width="60px" height="60px" src={imgGPS} />
+                    <a
+                      href="https://www.google.com.mx/maps/@20.9861506,-89.6910211,15z"
+                      target="_blank"
+                    >
+                      <img width="60px" height="60px" src={imgGPS} />
+                    </a>
                   </Row>
                   <Row className="justify-content-center">
                     <span style={{ fontSize: '12px' }}>Ver ubicación</span>

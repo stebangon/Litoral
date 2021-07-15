@@ -225,6 +225,9 @@
     background-color: rgb(241, 168, 153) !important;
     color: rgb(21, 76, 94);
 }
+.btnCotizar:focus {
+    box-shadow: none !important;
+}
 
 .hide {
     display: none;    

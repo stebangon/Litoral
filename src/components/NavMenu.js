@@ -31,17 +31,27 @@ function NavMenu() {
         <Navbar.Toggle />
         <Navbar.Collapse className="px-5 flex mr-auto justify-content-end">
           <Nav.Link href="#descargar" className="sm-12">
-            <img width="18px" height="20px" src={imgDescargarBrochure} />
+            <a href="../assets/brochure/LITORAL-EXTENDED-DIGITAL.pdf" download>
+              <img width="18px" height="20px" src={imgDescargarBrochure} />
+            </a>
           </Nav.Link>
           <Nav.Link
-            style={{ fontSize: '20px', fontFamily: 'Benne-Regular' }}
+            style={{
+              fontSize: '24px',
+              fontFamily: 'Benne-Regular',
+              color: 'rgb(21,76, 94)',
+            }}
             className="sm-12"
             onClick={handleShow}
           >
             contacto
           </Nav.Link>
           <Nav.Link
-            style={{ fontSize: '20px', fontFamily: 'Benne-Regular' }}
+            style={{
+              fontSize: '24px',
+              fontFamily: 'Benne-Regular',
+              color: 'rgb(21,76, 94)',
+            }}
             className="sm-12"
             onClick={handleShowMenu}
           >

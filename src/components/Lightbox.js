@@ -222,24 +222,6 @@ export default class Lightbox extends React.Component {
     return (
       <div className="lb-container App">
         <div className="lb-header" style={{ justifyContent: buttonAlign }}>
-          <Cond condition={showTitle && title}>
-            <div
-              className="lb-title"
-              style={{
-                display: buttonAlign === 'center' ? 'none' : 'flex',
-                order: buttonAlign === 'flex-start' ? '2' : 'unset',
-              }}
-            >
-              <span
-                title={title}
-                style={{
-                  textAlign: buttonAlign === 'flex-start' ? 'right' : 'left',
-                }}
-              >
-                {title}
-              </span>
-            </div>
-          </Cond>
           <Cond condition={buttonAlign === 'center' || _reset}>
             <div
               title="Reset"
@@ -331,6 +313,8 @@ export default class Lightbox extends React.Component {
                   fontSize: '22px',
                   textDecoration: 'none',
                   color: 'rgb(21,76, 94)',
+                  boxShadow: 'none !important',
+                  outline: 'none',
                 }}
               >
                 <img width="160px" src={imgCotizar} />
