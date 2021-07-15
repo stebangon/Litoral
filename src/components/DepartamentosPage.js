@@ -807,7 +807,8 @@ function DepartamentosPage() {
                 <img
                   width="145px"
                   height="40px"
-                  src={imgCotizar}
+                  // src={imgCotizar}
+                  className="btnCotizar"
                   style={{
                     cursor: 'pointer',
                   }}
@@ -817,7 +818,8 @@ function DepartamentosPage() {
               <img
                 width="200px"
                 height="40px"
-                src={imgAgendarCita}
+                className="btnAgendarCita"
+                // src={imgAgendarCita}
                 style={{
                   cursor: 'pointer',
                 }}

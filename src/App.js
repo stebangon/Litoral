@@ -402,8 +402,8 @@ function App() {
             <Row className="justify-content-center">
               <img
                 width="200px"
-                height="40px"
-                src={imgAgendarCita}
+                // height="40px"
+                className="btnAgendarCita"
                 style={{
                   cursor: 'pointer',
                 }}

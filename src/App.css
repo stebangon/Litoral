@@ -225,10 +225,33 @@
     background-color: rgb(241, 168, 153) !important;
     color: rgb(21, 76, 94);
 }
+.btnVerGaleria{
+    content: url('./assets/Recursos\ -\ LITORAL-79.svg');
+}
+.btnVerGaleria:hover {
+    content: url('./assets/Recursos\ -\ LITORAL-95.svg');
+}
+.btnAgendarCita{
+    content: url('./assets/Recursos\ -\ LITORAL-84.svg');
+}
+.btnAgendarCita:hover {
+    content: url('./assets/Recursos\ -\ LITORAL-92.svg');
+}
+.btnVerDepartamentos{
+    content: url('./assets/Recursos\ -\ LITORAL-80.svg');
+}
+.btnVerDepartamentos:hover {
+    content: url('./assets/Recursos\ -\ LITORAL-90.svg');
+}
+.btnCotizar{
+    content: url('./assets/Recursos\ -\ LITORAL-78.svg');
+}
+.btnCotizar:hover {
+    content: url('./assets/Recursos\ -\ LITORAL-89.svg');
+}
 .btnCotizar:focus {
     box-shadow: none !important;
 }
-
 .hide {
     display: none;    
 }

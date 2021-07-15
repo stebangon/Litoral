@@ -10,7 +10,6 @@ import img02 from '../assets/02.jpg'; // with import
 import img03 from '../assets/03.jpg'; // with import
 import img04 from '../assets/04.jpg'; // with import
 import img05 from '../assets/05.jpg'; // with import
-import imgVerGaleria from '../assets/Recursos - LITORAL-79.svg'; // with import
 
 // Note: section under the <Timeline></Timeline>
 // but inside the pinContainer must be at least 100%
@@ -98,7 +97,12 @@ const SlidersGaleria = () => {
                           color: 'rgb(21,76, 94)',
                         }}
                       >
-                        <img width="140px" height="40px" src={imgVerGaleria} />
+                        <img
+                          width="140px"
+                          height="40px"
+                          // src={imgVerGaleria}
+                          className="btnVerGaleria"
+                        />
                       </a>
                     </Row>
                   </Col>

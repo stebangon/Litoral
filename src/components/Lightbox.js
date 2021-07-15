@@ -317,17 +317,15 @@ export default class Lightbox extends React.Component {
                   outline: 'none',
                 }}
               >
-                <img width="160px" src={imgCotizar} />
+                <img width="160px" className="btnCotizar" />
               </a>
             </Col>
             <Col
               className="md-9"
               style={{
-                //maxWidth: '400px',
                 textAlign: 'start',
                 paddingLeft: '0px',
                 backgroundColor: 'rgba(236, 236, 230, 0)',
-                //backgroundColor: 'blue',
               }}
             >
               <img

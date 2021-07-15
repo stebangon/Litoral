@@ -115,7 +115,7 @@ function GaleriaPage() {
                     color: 'rgb(21,76, 94)',
                   }}
                 >
-                  <img width="150px" src={imgDepartamentos} />
+                  <img width="146px" className="btnVerDepartamentos" />
                 </a>
                 &nbsp;
                 <img width="158px" src={imgAvancesObra} />
