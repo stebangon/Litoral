@@ -121,3 +121,111 @@
     width: auto;
     transform: translate(20%, 120%);
 }
+.img1DeptoT1N1{
+    background-image: url('./assets/deptot1n1/SALA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img2DeptoT1N1{
+    background-image: url('./assets/deptot1n1/RECÁMARA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img3DeptoT1N1{
+    background-image: url('./assets/deptot1n1/TERRAZA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img1DeptoT2N2{
+    background-image: url('./assets/deptot2n2/SALA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img2DeptoT2N2{
+    background-image: url('./assets/deptot2n2/RECÁMARA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img3DeptoT2N2{
+    background-image: url('./assets/deptot2n2/_TERRAZA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img1DeptoT3N2{
+    background-image: url('./assets/deptot3n2/SALA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img2DeptoT3N2{
+    background-image: url('./assets/deptot3n2/RECÁMARA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img3DeptoT3N2{
+    background-image: url('./assets/deptot3n2/TERRAZA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img1DeptoT4N2{
+    background-image: url('./assets/deptot4n2/SALA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img2DeptoT4N2{
+    background-image: url('./assets/deptot4n2/RECÁMARA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img3DeptoT4N2{
+    background-image: url('./assets/deptot4n2/_TERRAZA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img1DeptoPHt1{
+    background-image: url('./assets/deptoPHt1/ROOF.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img2DeptoPHt1{
+    background-image: url('./assets/deptoPHt1/RECÁMARA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img3DeptoPHt1{
+    background-image: url('./assets/deptoPHt1/_TERRAZA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img1DeptoPHt2{
+    background-image: url('./assets/deptoPHt2/SALA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img2DeptoPHt2{
+    background-image: url('./assets/deptoPHt2/RECÁMARA.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.img3DeptoPHt2{
+    background-image: url('./assets/deptoPHt2/ROOF.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+.btnDepartamentos {
+    background-color: rgba(241, 168, 153, 0);
+    color: rgb(21, 76, 94);
+    border: 0px;
+}
+.btnDepartamentos:hover {
+    background-color: rgb(241, 168, 153);
+    color: rgb(21, 76, 94);
+}
+.btnDepartamentos:focus {
+    box-shadow: none !important;
+    background-color: rgb(241, 168, 153) !important;
+    color: rgb(21, 76, 94);
+}
+
+.hide {
+    display: none;    
+}

@@ -56,14 +56,19 @@ const Footer = () => {
                 <span>Brochure LITORAL</span>
               </Row>
               <Row className="pt-4">
-                <img
-                  width="45px"
-                  height="45px"
-                  src={imgDescargarBrochure2}
-                  style={{
-                    cursor: 'pointer',
-                  }}
-                />
+                <a
+                  href="../assets/brochure/LITORAL-EXTENDED-DIGITAL.pdf"
+                  download
+                >
+                  <img
+                    width="45px"
+                    height="45px"
+                    src={imgDescargarBrochure2}
+                    style={{
+                      cursor: 'pointer',
+                    }}
+                  />
+                </a>
               </Row>
             </Col>
             <Col className="md-4 pt-5">
