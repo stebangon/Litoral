@@ -4,6 +4,8 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Alert from 'react-bootstrap/Alert';
+import Spinner from 'react-bootstrap/Spinner';
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
@@ -16,16 +18,24 @@ import imgUbicacion from '../assets/Recursos - LITORAL-03.svg'; // with import
 import imgEnviar from '../assets/Recursos - LITORAL-81.svg'; // with import
 
 const FormularioContacto = ({ handleClose, show }) => {
-  const CssTextField = withStyles({
-    root: {
-      '& label.Mui-focused': {
-        color: 'rgb(241, 168, 153)',
-      },
-      '& .MuiInput-underline:after': {
-        borderBottomColor: 'rgb(241, 168, 153)',
-      },
-    },
-  })(TextField);
+  const [nombre, setNombre] = useState('');
+  const [telefono, setTelefono] = useState('');
+  const [correo, setCorreo] = useState('');
+  const [mensaje, setMensaje] = useState('');
+  const [aceptoTerminos, setAceptoTerminos] = useState(false);
+
+  // const envio = (datos) => {
+  // }
+  // const CssTextField = withStyles({
+  //   root: {
+  //     '& label.Mui-focused': {
+  //       color: 'rgb(241, 168, 153)',
+  //     },
+  //     '& .MuiInput-underline:after': {
+  //       borderBottomColor: 'rgb(241, 168, 153)',
+  //     },
+  //   },
+  // })(TextField);
 
   return (
     <div>
@@ -149,10 +159,49 @@ const FormularioContacto = ({ handleClose, show }) => {
                   pondremos en contacto con usted.
                 </span>
               </Row>
-              <Form>
-                <CssTextField
+              <Form
+                onSubmit={(e) => {
+                  console.log(e.target[0].value); //Nombre
+                  console.log(e.target[1].value); //Telefono
+                  console.log(e.target[2].value); //Correo
+                  console.log(e.target[3].value); //Mensaje
+                  e.preventDefault();
+                  // Guarda
+                  fetch(
+                    'https://us-central1-litoral-df396.cloudfunctions.net/enviarCorreo',
+                    {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'text/plain',
+                      },
+                      body: JSON.stringify({
+                        nombre: e.target[0].value,
+                        telefono: e.target[1].value,
+                        correo: e.target[2].value,
+                        mensaje: e.target[3].value,
+                        propiedad: 'Departamento Litoral',
+                      }),
+                    }
+                  )
+                    .then((res) => res.json())
+                    .then((res) => {
+                      console.log(res);
+                    })
+                    .catch((error) => {
+                      console.log(error);
+                    });
+                }}
+              >
+                <TextField
+                  type="text"
                   id="nombre"
                   label="Nombre"
+                  value={nombre}
+                  required
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setNombre(e.target.value);
+                  }}
                   fullWidth
                   inputProps={{
                     style: { fontSize: 8, color: 'rgb(241, 168, 153)' },
@@ -161,20 +210,33 @@ const FormularioContacto = ({ handleClose, show }) => {
                     style: { fontSize: 10, color: 'rgb(241, 168, 153)' },
                   }}
                 />
-                <CssTextField
+                <TextField
+                  type="tel"
+                  required
                   id="telefono"
                   label="Telefóno"
+                  value={telefono}
+                  onChange={(e) => {
+                    setTelefono(e.target.value);
+                  }}
                   fullWidth
                   inputProps={{
+                    pattern: '^\\d{10}',
                     style: { fontSize: 8, color: 'rgb(241, 168, 153)' },
                   }}
                   InputLabelProps={{
                     style: { fontSize: 10, color: 'rgb(241, 168, 153)' },
                   }}
                 />
-                <CssTextField
+                <TextField
+                  type="email"
                   id="correoelectronico"
                   label="Correo electrónico"
+                  required
+                  value={correo}
+                  onChange={(e) => {
+                    setCorreo(e.target.value);
+                  }}
                   fullWidth
                   inputProps={{
                     style: {
@@ -189,9 +251,13 @@ const FormularioContacto = ({ handleClose, show }) => {
                     },
                   }}
                 />
-                <CssTextField
+                <TextField
                   id="mensaje"
                   label="Mensaje"
+                  value={mensaje}
+                  onChange={(e) => {
+                    setMensaje(e.target.value);
+                  }}
                   fullWidth
                   inputProps={{
                     style: { fontSize: 8, color: 'rgb(241, 168, 153)' },
@@ -202,11 +268,17 @@ const FormularioContacto = ({ handleClose, show }) => {
                 />
                 <Checkbox
                   name="terminos"
+                  required
+                  checked={aceptoTerminos}
+                  onChange={(e) => {
+                    console.log(aceptoTerminos);
+                    setAceptoTerminos(!aceptoTerminos);
+                  }}
                   style={{
                     color: 'rgb(241, 168, 153)',
                     transform: 'scale(0.8)',
                   }}
-                ></Checkbox>
+                />
                 <span
                   style={{
                     fontSize: '10px',
@@ -215,12 +287,28 @@ const FormularioContacto = ({ handleClose, show }) => {
                 >
                   I agree with the Terms & Conditions & the Privacy Policy
                 </span>
+                <input
+                  type="image"
+                  name="submit"
+                  width="100px"
+                  src={imgEnviar}
+                />
               </Form>
             </Col>
           </Row>
         </Modal.Body>
         <Modal.Footer>
-          <img width="100px" src={imgEnviar} onClick={handleClose} />
+          <Alert className="mt-3 py-5 text-center" variant={'primary'}>
+            <Spinner animation="border" role="status" />
+            <br />
+            Enviando...
+          </Alert>
+          <Alert className="mt-3 py-5 text-center" variant={'success'}>
+            El envio fue correcto
+          </Alert>
+          <Alert className="mt-3 py-5 text-center" variant={'danger'}>
+            Error al enviar
+          </Alert>
         </Modal.Footer>
       </Modal>
     </div>
