@@ -8,8 +8,12 @@ import React, { useState, useEffect } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import { Modal } from 'react-bootstrap';
+import { CardBody, CardFooter } from 'reactstrap';
+import { Button } from '@material-ui/core';
+import ReactTooltip from "react-tooltip";
 
-import Footer from './Footer';
+import { getBrochure, loadDepartamentos } from '../apiRoutes';
 import NavMenu from './NavMenu';
 import FormularioContacto from './FormularioContacto';
 
@@ -26,11 +30,6 @@ import ImageMapper from 'react-img-mapper';
 import imgDisponible from '../assets/Recursos - LITORAL-85.svg'; // with import
 import imgVendido from '../assets/Recursos - LITORAL-86.svg'; // with import
 import imgApartado from '../assets/Recursos - LITORAL-87.svg'; // with import
-
-import { Modal } from 'react-bootstrap';
-import { CardBody, CardFooter } from 'reactstrap';
-import { Button } from '@material-ui/core';
-import { getBrochure, loadDepartamentos } from '../apiRoutes';
 
 function CotizarPage() {
   const [departamentos, setDepartamentos] = useState([]);
@@ -113,9 +112,9 @@ function CotizarPage() {
       case 'disponible':
         return ''// blanco
       case 'vendido':
-        return 'rgba(255,0,0,0.8)' // rojo
+        return 'rgb(163,98,95)' // rojo
       case 'apartado':
-        return 'rgba(218,165,32)' // amarillo
+        return 'rgb(218,165,32)' // amarillo
       default:
         return 'rgba(0,0,0,0.1)'
     }
@@ -205,7 +204,9 @@ function CotizarPage() {
                   key={itemdepartamento[1].departamento}
                   style={{
                   backgroundColor: getColorIndicador(itemdepartamento[1].estatus),
-                }} />  
+                }} 
+                data-tip="hello world"
+                />  
               ))
             }
           </Col>
@@ -354,6 +355,7 @@ function CotizarPage() {
           </Modal>
         ) : null}
       </div>
+      <ReactTooltip place="top" type="warning" effect="float"/>
     </div>
   );
 }
