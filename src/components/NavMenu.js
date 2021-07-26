@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { getBrochure } from '../apiRoutes';
 
 import imgLogoLitoral from '../assets/00Logo.svg'; // with import
 import imgDescargarBrochure from '../assets/01descargar.png'; // with import
@@ -31,7 +32,7 @@ function NavMenu() {
         <Navbar.Toggle />
         <Navbar.Collapse className="px-5 flex mr-auto justify-content-end">
           <Nav.Link href="#descargar" className="sm-12">
-            <a href="../assets/brochure/LITORAL-EXTENDED-DIGITAL.pdf" download>
+            <a href={getBrochure} target="_blank" download>
               <img width="18px" height="20px" src={imgDescargarBrochure} />
             </a>
           </Nav.Link>

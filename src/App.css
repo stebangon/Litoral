@@ -42,7 +42,7 @@
 }
 .cotizar-bg
 {
-    background-image: url('./assets/fondoedificioi-08.svg');
+    background-image: url('./assets/fondo.png');
     height: 110vh;
     width: 100%;
     background-size: cover;
@@ -75,8 +75,7 @@
     float: left;
 }
 /* Termina scroll lateral */
-.vistaaerea-bg
-{
+.vistaaerea-bg{
     background-image: url('./assets/Banner Progreso.jpg');
     height: 100vh;
     background-size: cover;
@@ -85,8 +84,7 @@
     margin: 0;
     /* clip-path: polygon(0% 25%, 36.5% 25%, 36.5% 12%, 67.5% 6%, 67.5% 25%, 100% 25%, 100% 99%, 0% 99%); */
 }
-.imgLogoFooter
-{
+.imgLogoFooter{
     position: relative;
     top: 80%;
     left: 0%;
@@ -94,8 +92,7 @@
     width: 140px;
     transform: translate(110%, -40%);
 }
-.imgEstrellaFooter
-{
+.imgEstrellaFooter{
     position: relative;
     top: 110%;
     right: -70%;
@@ -103,8 +100,7 @@
     width: auto;
     transform: translate(0%, -70%);
 }
-.imgLogoFooter2
-{
+.imgLogoFooter2{
     position: relative;
     top: 80%;
     left: 0%;
@@ -112,8 +108,7 @@
     width: 140px;
     transform: translate(110%, -55%);
 }
-.imgDep1
-{
+.imgDep1{
     position: absolute;
     top: 120%;
     left: 28%;
@@ -255,3 +250,294 @@
 .hide {
     display: none;    
 }
+
+/*Imagenes de admin de galeria*/
+.thumbex {
+    margin: 0px 20px 30px 0px;
+    width: 100%;
+    min-width: 260px;
+    /* max-width: 450px; */
+    height: 180px;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: hidden;
+    outline: 2px solid white;
+    outline-offset: -15px;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 5px 10px 40px 5px rgba(0,0,0,0.5);
+  }
+    .thumbex .thumbnail {
+        margin-top: 3px;
+        margin-bottom: 3px;
+        margin-left: 3px;
+        margin-right: 3px;
+        overflow: hidden;
+        min-width: 260px;
+        height: 180px;
+        position: relative;
+        opacity: 0.88;
+        backface-visibility: hidden;
+        transition: all 0.4s ease-out;
+    }     
+        
+    .thumbex .thumbnail img{
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      top: 50%;
+      height: 100%;
+      width: auto;
+      transform: translate(-50%, -50%);
+      backface-visibility: hidden;
+    }
+  
+    .thumbex #delete{
+      position: relative;
+      z-index: 2;
+      left: 90%;
+      bottom: 95%;
+      height: 20px;
+      width: auto;
+    }
+  
+    .thumbex .thumbnail span{
+      position: absolute;
+      z-index: 2;
+      top: calc(150px - 60px);
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.7);
+      text-align: center;
+      font-size: 20px;
+      color: white;
+      font-weight: 300;
+      letter-spacing: 0.2px;
+      transition: all 0.3s ease-out;
+    }
+  
+    .thumbex .thumbnail h2{
+      position: relative;
+      z-index: 2;
+      top: calc(125px);
+      background: rgba(0,0,0,0.7);
+      text-align: center;
+      bottom: 0;
+      font-size: 12px;
+      color: white;
+      font-weight: 300;
+      letter-spacing: 0.2px;
+      transition: all 0.3s ease-out;
+    }
+  
+    .thumbex .thumbnail:hover{
+      backface-visibility: hidden;
+      transform: scale(1.15, 1.15);
+      opacity: 1;
+    }
+  
+    .thumbex .thumbnail:hover span
+    {
+      opacity: 0;
+    }
+  
+    .thumbex .thumbnail:hover h2
+    {
+      opacity: 0;
+    }
+/*Termina Imagenes de admin de galeria*/
+
+/*Cuadros de departamentos*/
+  .piso1-l {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(162px, -190px);
+    z-index: 100;
+  }
+  .piso1-c {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(267px, -190px);
+    z-index: 100;
+  }
+  .piso1-r {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(367px, -190px);
+    z-index: 100;
+  }
+  .piso2-l {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(162px, -255px);
+    z-index: 100;
+  }
+  .piso2-c {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(267px, -255px);
+    z-index: 100;
+  }
+  .piso2-r {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(367px, -255px);
+    z-index: 100;
+  }
+  .piso3-l {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(162px, -320px);
+    z-index: 100;
+  }
+  .piso3-c {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(267px, -320px);
+    z-index: 100;
+  }
+  .piso3-r {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(367px, -320px);
+    z-index: 100;
+  }
+  .piso4-l {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(162px, -385px);
+    z-index: 100;
+  }
+  .piso4-c {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(267px, -385px);
+    z-index: 100;
+  }
+  .piso4-r {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(367px, -385px);
+    z-index: 100;
+  }
+  .piso5-l {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(162px, -448px);
+    z-index: 100;
+  }
+  .piso5-c {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(267px, -448px);
+    z-index: 100;
+  }
+  .piso5-r {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(367px, -448px);
+    z-index: 100;
+  }
+  .piso6-l {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(162px, -510px);
+    z-index: 100;
+  }
+  .piso6-c {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(267px, -510px);
+    z-index: 100;
+  }
+  .piso6-r {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(367px, -510px);
+    z-index: 100;
+  }
+  .piso7-l {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(162px, -575px);
+    z-index: 100;
+  }
+  .piso7-c {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(267px, -575px);
+    z-index: 100;
+  }
+  .piso7-r {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(367px, -575px);
+    z-index: 100;
+  }
+  .pisoph-l {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(162px, -668px);
+    z-index: 100;
+  }
+  .pisoph-c {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(267px, -668px);
+    z-index: 100;
+  }
+  .pisoph-r {
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(367px, -668px);
+    z-index: 100;
+  }
+/*Termina cuadros de departamentos*/

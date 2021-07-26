@@ -8,6 +8,9 @@ import App from './App';
 import GaleriaPage from './components/GaleriaPage';
 import CotizarPage from './components/CotizarPage';
 import DepartamentosPage from './components/DepartamentosPage';
+import AdminSolicitudesPage from './components/AdminSolicitudesPage';
+import AdminDepartamentosPage from './components/AdminDepartamentosPage';
+import AdminGaleriaPage from './components/AdminGaleriaPage';
 import './index.css';
 
 const hist = createBrowserHistory();
@@ -17,6 +20,13 @@ const app = (
       <Route exact path="/galeria" component={GaleriaPage} />
       <Route exact path="/cotizar" component={CotizarPage} />
       <Route exact path="/departamentos" component={DepartamentosPage} />
+      <Route exact path="/adminsolicitudes" component={AdminSolicitudesPage} />
+      <Route
+        exact
+        path="/admindepartamentos"
+        component={AdminDepartamentosPage}
+      />
+      <Route exact path="/admingaleria" component={AdminGaleriaPage} />
       <Route path="/" render={() => <App />} />
       {/* <Redirect from="/" to="/login" /> */}
     </Switch>

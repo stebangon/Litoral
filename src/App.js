@@ -29,6 +29,7 @@ import imgWhatsapp from './assets/Recursos - LITORAL-60.svg'; // with import
 import imgGPS from './assets/Recursos - LITORAL-68.svg'; // with import
 import imgCarro from './assets/Recursos - LITORAL-69.svg'; // with import
 import imgAgendarCita from './assets/Recursos - LITORAL-84.svg'; // with import
+import { getBrochure } from './apiRoutes';
 
 function App() {
   const [show, setShow] = useState(false);
@@ -242,10 +243,7 @@ function App() {
               style={{ textAlign: 'end', maxWidth: '142px' }}
             >
               <Row className="justify-content-center">
-                <a
-                  href="../assets/brochure/LITORAL-EXTENDED-DIGITAL.pdf"
-                  download
-                >
+                <a href={getBrochure} target="_blank" download>
                   <img
                     width="45px"
                     height="45px"

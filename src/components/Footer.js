@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 
 import FormularioContacto from './FormularioContacto';
+import { getBrochure } from '../apiRoutes';
 
 import imgLogoLitoral from '../assets/Recursos - LITORAL-57.svg'; // with import
 import imgEstrella from '../assets/Recursos - LITORAL-55.svg'; // with import
@@ -56,10 +57,7 @@ const Footer = () => {
                 <span>Brochure LITORAL</span>
               </Row>
               <Row className="pt-4">
-                <a
-                  href="../assets/brochure/LITORAL-EXTENDED-DIGITAL.pdf"
-                  download
-                >
+                <a href={getBrochure} target="_blank" download>
                   <img
                     width="45px"
                     height="45px"

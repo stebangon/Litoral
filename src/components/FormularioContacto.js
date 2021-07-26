@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import fireDB from '../firebase';
 
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Alert from 'react-bootstrap/Alert';
-import Spinner from 'react-bootstrap/Spinner';
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import imgSol from '../assets/Recursos - LITORAL-07.svg'; // with import
 import imgLuna from '../assets/Recursos - LITORAL-08.svg'; // with import
@@ -23,22 +25,26 @@ const FormularioContacto = ({ handleClose, show }) => {
   const [correo, setCorreo] = useState('');
   const [mensaje, setMensaje] = useState('');
   const [aceptoTerminos, setAceptoTerminos] = useState(false);
-
-  // const envio = (datos) => {
-  // }
-  // const CssTextField = withStyles({
-  //   root: {
-  //     '& label.Mui-focused': {
-  //       color: 'rgb(241, 168, 153)',
-  //     },
-  //     '& .MuiInput-underline:after': {
-  //       borderBottomColor: 'rgb(241, 168, 153)',
-  //     },
-  //   },
-  // })(TextField);
-
+  useEffect(() => {
+    setNombre('');
+    setTelefono('');
+    setCorreo('');
+    setMensaje('');
+    setAceptoTerminos(false);
+  }, [handleClose]);
   return (
     <div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Modal show={show} size="lg" onHide={handleClose}>
         <Modal.Body className="px-5">
           <Row>
@@ -161,12 +167,17 @@ const FormularioContacto = ({ handleClose, show }) => {
               </Row>
               <Form
                 onSubmit={(e) => {
-                  console.log(e.target[0].value); //Nombre
-                  console.log(e.target[1].value); //Telefono
-                  console.log(e.target[2].value); //Correo
-                  console.log(e.target[3].value); //Mensaje
                   e.preventDefault();
-                  // Guarda
+                  toast.info('Enviado solicitud de información...', {
+                    position: 'top-right',
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                  });
+                  // Envia correo
                   fetch(
                     'https://us-central1-litoral-df396.cloudfunctions.net/enviarCorreo',
                     {
@@ -185,10 +196,51 @@ const FormularioContacto = ({ handleClose, show }) => {
                   )
                     .then((res) => res.json())
                     .then((res) => {
+                      toast.done('Solicitud enviada...', {
+                        position: 'top-right',
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                      });
                       console.log(res);
+                      handleClose();
                     })
                     .catch((error) => {
+                      toast.error(
+                        'Upss algo salio mal, vuelve a intentarlo...',
+                        {
+                          position: 'top-right',
+                          autoClose: 5000,
+                          hideProgressBar: false,
+                          closeOnClick: true,
+                          pauseOnHover: true,
+                          draggable: true,
+                          progress: undefined,
+                        }
+                      );
                       console.log(error);
+                      handleClose();
+                    });
+                  //Guarda en base de datos (firebase)
+                  fireDB
+                    .database()
+                    .ref()
+                    .child('solicitudes')
+                    .push({
+                      nombre: e.target[0].value,
+                      telefono: e.target[1].value,
+                      correo: e.target[2].value,
+                      mensaje: e.target[3].value,
+                      propiedad: 'Departamento Litoral',
+                      fecha:
+                        String(new Date().getDate()) +
+                        '/' +
+                        String(new Date().getMonth()) +
+                        '/' +
+                        String(new Date().getFullYear()),
                     });
                 }}
               >
@@ -297,19 +349,6 @@ const FormularioContacto = ({ handleClose, show }) => {
             </Col>
           </Row>
         </Modal.Body>
-        <Modal.Footer>
-          <Alert className="mt-3 py-5 text-center" variant={'primary'}>
-            <Spinner animation="border" role="status" />
-            <br />
-            Enviando...
-          </Alert>
-          <Alert className="mt-3 py-5 text-center" variant={'success'}>
-            El envio fue correcto
-          </Alert>
-          <Alert className="mt-3 py-5 text-center" variant={'danger'}>
-            Error al enviar
-          </Alert>
-        </Modal.Footer>
       </Modal>
     </div>
   );

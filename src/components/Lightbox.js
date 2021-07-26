@@ -346,8 +346,8 @@ export default class Lightbox extends React.Component {
                 onDoubleClick={(e) => this.shockZoom(e)}
                 onLoad={(e) => this.setState({ loading: false })}
                 className={`lb-img${loading ? ' lb-loading' : ''}`}
-                width="auto"
-                height="400px"
+                height="auto"
+                width="400px"
                 title={title}
                 src={image}
                 alt={title}
