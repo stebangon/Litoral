@@ -1,11 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-floating-whatsapp-button/dist/index.css';
 import './App.css';
+import style from './App.css';
 
 import React, { useState } from 'react';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { FloatingWhatsApp } from 'react-floating-whatsapp-button';
+import { Parallax } from 'react-scroll-parallax';
 
 import SlidersGaleria from './components/SlidersGaleria';
 import Footer from './components/Footer';
@@ -29,7 +33,7 @@ import imgWhatsapp from './assets/Recursos - LITORAL-60.svg'; // with import
 import imgGPS from './assets/Recursos - LITORAL-68.svg'; // with import
 import imgCarro from './assets/Recursos - LITORAL-69.svg'; // with import
 import imgAgendarCita from './assets/Recursos - LITORAL-84.svg'; // with import
-import { getBrochure } from './apiRoutes';
+import { getBrochure, getURLWhatsapp } from './apiRoutes';
 
 function App() {
   const [show, setShow] = useState(false);
@@ -101,9 +105,11 @@ function App() {
             </Col>
           </Row>
           <Row>
-            <Container className="px-5 pt-5" style={{ textAlign: 'start' }}>
-              <img width="60px" height="60px" src={imgSol} />
-            </Container>
+            <Parallax offsetYMin={-100} offsetYMax={100} className={style.ring}>
+              <Container className="px-5 pt-5" style={{ textAlign: 'start' }}>
+                <img width="60px" height="60px" src={imgSol} />
+              </Container>
+            </Parallax>
           </Row>
           <Row>
             <Container style={{ textAlign: 'end' }}>
@@ -267,14 +273,6 @@ function App() {
                 Brochure LITORAL
               </Row>
             </Col>
-            <Col
-              className="md-1"
-              style={{ textAlign: 'end', maxWidth: '40px' }}
-            >
-              <Row className="justify-content-center">
-                <img width="56px" height="56px" src={imgWhatsapp} />
-              </Row>
-            </Col>
           </Row>
         </Container>
       </div>
@@ -415,6 +413,18 @@ function App() {
       <div id="footer">
         <Footer />
       </div>
+      <FloatingWhatsApp
+        phone="9993818008"
+        headerTitle="Departamentos Litoral"
+        popupMessage="Hola!... ¿como podemos ayudarte?"
+        zIndex="1000"
+        headerColor="#F1A899"
+        backgroundColor=""
+        autoOpenTimeout="2000"
+        showPopup="true"
+        size="90px"
+        buttonImage="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIzLjAuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MCA1MCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTAgNTA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojMTU0QzVFO30KCS5zdDF7ZmlsbDojQjc2MjVFO30KCS5zdDJ7ZmlsbDojRUNFQ0U2O30KCS5zdDN7b3BhY2l0eTowLjI3O2ZpbGw6I0YxQTg5OTt9Cgkuc3Q0e2ZpbGw6bm9uZTt9Cgkuc3Q1e2ZpbGw6I0YxQTg5OTt9Cgkuc3Q2e2ZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO2ZpbGw6IzE1NEM1RTt9Cgkuc3Q3e29wYWNpdHk6MC40MTtmaWxsOiNGMUE4OTk7fQoJLnN0OHtmaWxsOiNGNENEODc7fQoJLnN0OXtmaWxsOm5vbmU7c3Ryb2tlOiMxNTRDNUU7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MTB7b3BhY2l0eTowLjI0O2ZpbGw6I0I3NjI1RTt9Cjwvc3R5bGU+CjxjaXJjbGUgY2xhc3M9InN0MyIgY3g9IjI1IiBjeT0iMjUiIHI9IjIzIi8+CjxnPgoJPGNpcmNsZSBjbGFzcz0ic3QxIiBjeD0iMjUiIGN5PSIyNSIgcj0iMTguMDMiLz4KCTxnPgoJCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0yNC41MiwxNS4xN2MtNS4yLDAuMjUtOS4zLDQuNTgtOS4yOCw5Ljc4YzAsMS41OCwwLjM5LDMuMDgsMS4wNiw0LjRsLTEuMDQsNS4wMwoJCQljLTAuMDYsMC4yNywwLjE5LDAuNTEsMC40NiwwLjQ1bDQuOTMtMS4xN2MxLjI3LDAuNjMsMi42OSwwLjk5LDQuMTksMS4wMmM1LjMxLDAuMDgsOS43NC00LjE0LDkuOTEtOS40NQoJCQlDMzQuOTMsMTkuNTQsMzAuMjMsMTQuOSwyNC41MiwxNS4xN0wyNC41MiwxNS4xN3ogTTMwLjQsMzAuMzJjLTEuNDQsMS40NC0zLjM2LDIuMjQtNS40LDIuMjRjLTEuMiwwLTIuMzQtMC4yNy0zLjQtMC44CgkJCWwtMC42OS0wLjM0bC0zLjAyLDAuNzJsMC42NC0zLjA5bC0wLjM0LTAuNjZjLTAuNTUtMS4wOC0wLjgzLTIuMjUtMC44My0zLjQ3YzAtMi4wNCwwLjc5LTMuOTYsMi4yNC01LjQKCQkJYzEuNDMtMS40MywzLjM4LTIuMjQsNS40LTIuMjRjMi4wNCwwLDMuOTYsMC43OSw1LjQsMi4yNGMxLjQ0LDEuNDQsMi4yNCwzLjM2LDIuMjQsNS40QzMyLjY0LDI2Ljk0LDMxLjgzLDI4Ljg5LDMwLjQsMzAuMzIKCQkJTDMwLjQsMzAuMzJ6IE0zMC40LDMwLjMyIi8+CgkJPHBhdGggY2xhc3M9InN0MiIgZD0iTTI5Ljc0LDI3LjA0bC0xLjg5LTAuNTRjLTAuMjUtMC4wNy0wLjUyLDAtMC43LDAuMThsLTAuNDYsMC40N2MtMC4xOSwwLjItMC40OSwwLjI2LTAuNzUsMC4xNgoJCQljLTAuODktMC4zNi0yLjc4LTIuMDMtMy4yNi0yLjg3Yy0wLjE0LTAuMjQtMC4xMi0wLjU0LDAuMDUtMC43NmwwLjQtMC41MmMwLjE2LTAuMiwwLjE5LTAuNDgsMC4wOS0wLjcybC0wLjgtMS44CgkJCWMtMC4xOS0wLjQzLTAuNzQtMC41Ni0xLjEtMC4yNWMtMC41MywwLjQ1LTEuMTUsMS4xMi0xLjIzLDEuODhjLTAuMTMsMS4zMiwwLjQzLDIuOTksMi41OCw1YzIuNDgsMi4zMiw0LjQ3LDIuNjIsNS43NiwyLjMxCgkJCWMwLjczLTAuMTgsMS4zMi0wLjg5LDEuNjktMS40N0MzMC4zOSwyNy43LDMwLjE5LDI3LjE3LDI5Ljc0LDI3LjA0TDI5Ljc0LDI3LjA0eiBNMjkuNzQsMjcuMDQiLz4KCTwvZz4KPC9nPgo8L3N2Zz4K"
+      />
     </div>
   );
 }

@@ -11,7 +11,7 @@ import Container from 'react-bootstrap/Container';
 import { Modal } from 'react-bootstrap';
 import { CardBody, CardFooter } from 'reactstrap';
 import { Button } from '@material-ui/core';
-import ReactTooltip from "react-tooltip";
+import ReactTooltip from 'react-tooltip';
 
 import { getBrochure, loadDepartamentos } from '../apiRoutes';
 import NavMenu from './NavMenu';
@@ -200,13 +200,32 @@ function CotizarPage() {
               }}
             />
             {departamentos.map((itemdepartamento) => (
-                <div className={itemdepartamento[1].departamento}
-                  key={itemdepartamento[1].departamento}
-                  style={{
-                  backgroundColor: getColorIndicador(itemdepartamento[1].estatus),
-                }} 
-                data-tip="hello world"
-                />  
+                <div>
+                  <div className={itemdepartamento[1].departamento}
+                    key={itemdepartamento[1].departamento}
+                    style={{
+                    backgroundColor: getColorIndicador(itemdepartamento[1].estatus),
+                    }} 
+                    data-tip
+                    data-for={itemdepartamento[1].departamento}
+                  /> 
+                  <ReactTooltip
+                    id={itemdepartamento[1].departamento}
+                    effect="solid"
+                    border={true}
+                    type={
+                      itemdepartamento[1].estatus === 'disponible'
+                      ? 'light'
+                      : itemdepartamento[1].estatus === 'vendido'
+                        ? 'error'
+                        : 'warning'}
+                  >
+                    DEPARTAMENTO <br />
+                    Tipo: {itemdepartamento[1].tipo} <br />
+                    M<sup>2</sup>: {itemdepartamento[1].m2} <br />
+                    Estatus: {itemdepartamento[1].estatus} <br />
+                  </ReactTooltip>
+                </div>
               ))
             }
           </Col>
@@ -346,7 +365,37 @@ function CotizarPage() {
         <FormularioContacto handleClose={handleClose} show={show} />
         {area != null ? (
           <Modal show={showDetail} centered>
-            <CardBody>{area.title}</CardBody>
+            <CardBody>
+              <Col>
+              <Row className="justify-content-center">
+                DEPARTAMENTO <br /><br />
+              </Row>
+              <Row className="justify-content-center">
+                Tipo: {area.tipo} <br />
+              </Row>
+              <Row className="justify-content-center">
+                de {area.m2} M<sup>2</sup> <br />
+              </Row>
+              <Row className="justify-content-center">
+                Estatus: {area.estatus} <br />
+              </Row>
+              <Row className="justify-content-center">    
+                <img
+                  width="200px"
+                  height="40px"
+                  className="btnAgendarCita"
+                  // src={imgAgendarCita}
+                  style={{
+                    cursor: 'pointer',
+                  }}
+                  onClick={() => {
+                    handleShow();
+                    setShowDetail(false);
+                  }}
+                />
+              </Row>
+              </Col>
+            </CardBody>
             <CardFooter>
               <Button color="primary" onClick={() => setShowDetail(false)}>
                 Cerrar
@@ -355,7 +404,6 @@ function CotizarPage() {
           </Modal>
         ) : null}
       </div>
-      <ReactTooltip place="top" type="warning" effect="float"/>
     </div>
   );
 }

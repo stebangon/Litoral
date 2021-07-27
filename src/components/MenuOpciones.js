@@ -28,6 +28,10 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
     handleCloseMenu();
     history.push('/departamentos');
   };
+  const handleRedirectCotizador = () => {
+    handleCloseMenu();
+    history.push('/cotizar');
+  };
   return (
     <div>
       <Modal show={showMenu} size="xl" onHide={handleCloseMenu}>
@@ -42,7 +46,7 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
               <img width="140px" src={imgEscudoPlayaVerde} />
             </Col>
             <Col className="md-9 justify-content-start">
-              <Row className="pl-5">
+              <Row id="01Litoral" className="pl-5">
                 <a
                   href="/home/#menu"
                   style={{
@@ -58,7 +62,7 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
               <Row className="pr-5">
                 <ColoredLine color="rgb(21,76, 94)" />
               </Row>
-              <Row className="pl-5">
+              <Row id="02Galeria" className="pl-5">
                 <a
                   href="/home/#galeria"
                   style={{
@@ -74,7 +78,7 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
               <Row className="pr-5">
                 <ColoredLine color="rgb(21,76, 94)" />
               </Row>
-              <Row className="pl-5">
+              <Row id="03Departamentos" className="pl-5">
                 <a
                   href="#"
                   style={{
@@ -90,7 +94,23 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
               <Row className="pr-5">
                 <ColoredLine color="rgb(21,76, 94)" />
               </Row>
-              <Row className="pl-5">
+              <Row id="04Cotizar" className="pl-5">
+                <a
+                  href="#"
+                  style={{
+                    fontSize: '22px',
+                    textDecoration: 'none',
+                    color: 'rgb(21,76, 94)',
+                  }}
+                  onClick={handleRedirectCotizador}
+                >
+                  04 &nbsp;&nbsp; COTIZAR
+                </a>
+              </Row>
+              <Row className="pr-5">
+                <ColoredLine color="rgb(21,76, 94)" />
+              </Row>
+              <Row id="05Ubicacion" className="pl-5">
                 <a
                   href="/home/#ubicacion"
                   style={{
@@ -100,25 +120,13 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
                   }}
                   onClick={handleRedirectHome}
                 >
-                  04 &nbsp;&nbsp; UBICACIÓN
+                  05 &nbsp;&nbsp; UBICACIÓN
                 </a>
               </Row>
               <Row className="pr-5">
                 <ColoredLine color="rgb(21,76, 94)" />
               </Row>
-              {/* <Row className="pl-5">
-                <span
-                  style={{
-                    fontSize: '22px',
-                  }}
-                >
-                  05 &nbsp;&nbsp; COTIZADOR
-                </span>
-              </Row>
-              <Row className="pr-5">
-                <ColoredLine color="rgb(21,76, 94)" />
-              </Row> */}
-              <Row className="pl-5">
+              <Row id="06Contacto" className="pl-5">
                 <a
                   href="/home/#contacto"
                   style={{
@@ -128,7 +136,7 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
                   }}
                   onClick={handleRedirectHome}
                 >
-                  05 &nbsp;&nbsp; CONTACTO
+                  06 &nbsp;&nbsp; CONTACTO
                 </a>
               </Row>
             </Col>
