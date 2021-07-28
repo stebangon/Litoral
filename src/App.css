@@ -50,7 +50,7 @@
 .amenidades-bg
 {
     background-image: url('./assets/Plano Amenidades.jpg');
-    height: 70vh;
+    height: 80vh;
     background-size: cover;
     
     padding: 0;
@@ -540,7 +540,83 @@
     transform: translate(367px, -668px);
     z-index: 100;
   }
-/*Termina cuadros de departamentos*/
+  /*Termina cuadros de departamentos*/
+  /* Amenidades del plano */
+  .punto1{
+    border-radius: 50%;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    transform: translate(367px, -258px);
+    z-index: 100;
+  }
+  .punto2{
+    border-radius: 50%;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    transform: translate(557px, -200px);
+    z-index: 100;
+  }
+  .punto3{
+    border-radius: 50%;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    transform: translate(567px, -358px);
+    z-index: 100;
+  }
+  .punto4{
+    border-radius: 50%;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    transform: translate(650px, -200px);
+    z-index: 100;
+  }
+  .punto5{
+    border-radius: 50%;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    transform: translate(647px, -282px);
+    z-index: 100;
+  }
+  .punto6{
+    border-radius: 50%;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    transform: translate(745px, -302px);
+    z-index: 100;
+  }
+  .punto7{
+    border-radius: 50%;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    transform: translate(827px, -262px);
+    z-index: 100;
+  }
+  .punto8{
+    border-radius: 50%;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    transform: translate(900px, -232px);
+    z-index: 100;
+  }
+  .punto9{
+    border-radius: 50%;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    transform: translate(1067px, -190px);
+    z-index: 100;
+  }
+  /* Termina amenidades del plano */
+
+
 :local(.ring) {
   position: relative;
   z-index: 2;

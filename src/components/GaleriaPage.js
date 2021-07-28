@@ -12,7 +12,6 @@ import Gallery from 'react-photo-gallery';
 import { Modal, ModalGateway } from 'react-images';
 import { loadGalerias } from '../apiRoutes';
 
-import imgDepartamentos from '../assets/Recursos - LITORAL-80.svg'; // with import
 import imgAvancesObra from '../assets/Recursos - LITORAL-91.svg'; // with import
 import imgPrev from '../assets/Recursos - LITORAL-20.svg'; // with import
 import imgNext from '../assets/Recursos - LITORAL-19.svg'; // with import

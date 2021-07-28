@@ -8,6 +8,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Carousel from 'react-bootstrap/Carousel';
 import { FloatingWhatsApp } from 'react-floating-whatsapp-button';
 import { Parallax } from 'react-scroll-parallax';
 
@@ -15,9 +16,10 @@ import SlidersGaleria from './components/SlidersGaleria';
 import Footer from './components/Footer';
 import NavMenu from './components/NavMenu';
 import FormularioContacto from './components/FormularioContacto';
+import Amenidades from './components/Amenidades';
 
-import imgDesde from './assets/Recursos - LITORAL-18.svg'; // with import
-import imgChuxchulub from './assets/Recursos - LITORAL-23.svg'; // with import
+import { getBrochure, getURLWhatsapp } from './apiRoutes';
+
 import imgEscudoPlaya from './assets/Recursos - LITORAL-21.svg'; // with import
 import imgVive from './assets/Recursos - LITORAL-56.svg'; // with import
 import imgSol from './assets/Recursos - LITORAL-07.svg'; // with import
@@ -33,7 +35,9 @@ import imgWhatsapp from './assets/Recursos - LITORAL-60.svg'; // with import
 import imgGPS from './assets/Recursos - LITORAL-68.svg'; // with import
 import imgCarro from './assets/Recursos - LITORAL-69.svg'; // with import
 import imgAgendarCita from './assets/Recursos - LITORAL-84.svg'; // with import
-import { getBrochure, getURLWhatsapp } from './apiRoutes';
+import imgBanner01 from './assets/Banner Progreso-01.png'; // with import
+import imgBanner02 from './assets/Banner Progreso-01.png'; // with import
+import imgBanner03 from './assets/Banner Progreso-01.png'; // with import
 
 function App() {
   const [show, setShow] = useState(false);
@@ -45,13 +49,24 @@ function App() {
         <NavMenu />
       </div>
       <div id="portada">
-        <Jumbotron className="jm-bg" fluid>
+        <Carousel>
+          <Carousel.Item>
+            <img className="d-block w-100" src={imgBanner01} alt="Desde 3.8" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src={imgBanner02} alt="Banner 02" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src={imgBanner03} alt="Banner 03" />
+          </Carousel.Item>
+        </Carousel>
+        {/* <Jumbotron className="jm-bg" fluid>
           <Container className="cntr-bg"></Container>
           <img className="imgdesde" src={imgDesde} />
           <Row className="justify-content-end">
             <img className="imgchuxchulub" src={imgChuxchulub} />
           </Row>
-        </Jumbotron>
+        </Jumbotron> */}
       </div>
       <div id="quienessomos">
         <Container className="pt-5 px-5">
@@ -140,7 +155,7 @@ function App() {
         </Container>
         <Row>
           <Col>
-            <Jumbotron className="amenidades-bg" fluid></Jumbotron>
+            <Amenidades />
           </Col>
         </Row>
         <Container className="py-5 px-5">

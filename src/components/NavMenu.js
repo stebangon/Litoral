@@ -24,7 +24,7 @@ function NavMenu() {
         <Navbar.Brand href="#home" className="px-5">
           <img
             width="250px"
-            height="200px"
+            height="140px"
             src={imgLogoLitoral}
             alt="React Logo"
           />

@@ -7,29 +7,21 @@ import React, { useState, useEffect } from 'react';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
 import { Modal } from 'react-bootstrap';
 import { CardBody, CardFooter } from 'reactstrap';
 import { Button } from '@material-ui/core';
 import ReactTooltip from 'react-tooltip';
 
-import { getBrochure, loadDepartamentos } from '../apiRoutes';
+import { loadDepartamentos } from '../apiRoutes';
 import NavMenu from './NavMenu';
-import FormularioContacto from './FormularioContacto';
+import Footer from './Footer';
 
-import imgLogoLitoral from '../assets/Recursos - LITORAL-57.svg'; // with import
-import imgEstrella from '../assets/Recursos - LITORAL-55.svg'; // with import
-import imgDescargarBrochure2 from '../assets/Recursos - LITORAL-67.svg'; // with import
-import imgEmail from '../assets/Recursos - LITORAL-71.svg'; // with import
-import imgGPI from '../assets/Recursos - LITORAL-54.svg'; // with import
-import imgInstagram from '../assets/Recursos - LITORAL-16.svg'; // with import
-import imgYoutube from '../assets/Recursos - LITORAL-12.svg'; // with import
-import imgFacebook from '../assets/Recursos - LITORAL-05.svg'; // with import
 import edificio from '../assets/edificio.png'; // with import
 import ImageMapper from 'react-img-mapper';
 import imgDisponible from '../assets/Recursos - LITORAL-85.svg'; // with import
 import imgVendido from '../assets/Recursos - LITORAL-86.svg'; // with import
 import imgApartado from '../assets/Recursos - LITORAL-87.svg'; // with import
+import imgDesde from '../assets/Recursos - LITORAL-18.svg'; // with import
 
 function CotizarPage() {
   const [departamentos, setDepartamentos] = useState([]);
@@ -175,7 +167,7 @@ function CotizarPage() {
       <div id="cuerpo" className="cotizar-bg">
         <Row>
           <Col className="md-4 align-self-center">
-            <Row className="pl-5">
+            <Row className="pl-5 pb-5">
               <span>Si está interesado en conocer LITORAL, <br />póngase en contacto con nosotros.</span>
               <img
                 width="200px"
@@ -186,6 +178,12 @@ function CotizarPage() {
                   cursor: 'pointer',
                 }}
                 onClick={handleShow}
+              />
+            </Row>
+            <Row className="pl-0 pt-5">
+              <img
+                width="120px"
+                src={imgDesde}
               />
             </Row>
           </Col>
@@ -254,116 +252,10 @@ function CotizarPage() {
           </Col>
         </Row>
       </div>
-      <div id="footer" className="pt-5">
-        <Row
-          style={{
-            backgroundColor: 'rgb(236, 236, 230)',
-            height: '10px',
-          }}
-        >
-          <img className="imgLogoFooter2" src={imgLogoLitoral} />
-          <img className="imgEstrellaFooter" src={imgEstrella} />
-        </Row>
-        <Row
-          style={{
-            height: '400px',
-            backgroundColor: 'rgb(236, 236, 230)',
-          }}
-        >
-          <Container className="pt-5 pl-5">
-            <Row>
-              <Col className="md-4 pt-5">
-                <Row>
-                  <span>Oficina ventas:</span>
-                </Row>
-                <Row>
-                  <span>
-                    Local 13 Planta Alta, Plaza
-                    <br />
-                    Moombú en calle 7A1 x 24 y 22
-                    <br />
-                    Santa Gertrudis Copó.
-                  </span>
-                </Row>
-                <Row className="pt-4">
-                  <span>Descargar PDF</span>
-                </Row>
-                <Row>
-                  <span>Brochure LITORAL</span>
-                </Row>
-                <Row className="pt-4">
-                  <a href={getBrochure} target="_blank" download>
-                    <img
-                      width="45px"
-                      height="45px"
-                      src={imgDescargarBrochure2}
-                      style={{
-                        cursor: 'pointer',
-                      }}
-                    />
-                  </a>
-                </Row>
-              </Col>
-              <Col className="md-4 pt-5">
-                <Row>
-                  <span>Siguenos en:</span>
-                </Row>
-                <Row>
-                  <span>
-                    <img width="18px" src={imgFacebook} />
-                    &nbsp; <a href="#">Facebook</a>
-                    <br />
-                    <img width="18px" src={imgInstagram} />
-                    &nbsp; <a href="#">Instagram</a>
-                    <br />
-                    <img width="18px" src={imgYoutube} />
-                    &nbsp; <a href="#">Youtube</a>
-                  </span>
-                </Row>
-                <Row className="pt-4">
-                  <span>Contáctanos</span>
-                </Row>
-                <Row>
-                  <span
-                    style={{
-                      cursor: 'pointer',
-                    }}
-                  >
-                    hola@grupogpi.com
-                  </span>
-                </Row>
-                <Row className="pt-4">
-                  <img
-                    width="45px"
-                    height="45px"
-                    src={imgEmail}
-                    style={{
-                      cursor: 'pointer',
-                    }}
-                    onClick={handleShow}
-                  />
-                </Row>
-              </Col>
-              <Col className="md-4 pt-5">
-                <Row>
-                  <span>© 2021 Litoral Beach Apartaments</span>
-                </Row>
-                <Row>
-                  <span>
-                    <a href="#">Aviso de privacidad</a>
-                    <br />
-                    <a href="#">Avisos legales</a>
-                  </span>
-                </Row>
-                <Row className="pt-5">
-                  <img width="180px" src={imgGPI} />
-                </Row>
-              </Col>
-            </Row>
-          </Container>
-        </Row>
-        <FormularioContacto handleClose={handleClose} show={show} />
-        {area != null ? (
+      <div id="footer">
+        <Footer />
+      </div>
+      {area != null ? (
           <Modal show={showDetail} centered>
             <CardBody>
               <Col>
@@ -403,7 +295,6 @@ function CotizarPage() {
             </CardFooter>
           </Modal>
         ) : null}
-      </div>
     </div>
   );
 }
