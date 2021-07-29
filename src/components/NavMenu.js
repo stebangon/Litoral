@@ -20,17 +20,26 @@ function NavMenu() {
   console.log('Entro nav menu');
   return (
     <div>
-      <Navbar>
+      <Navbar
+        collapseOnSelect
+        fixed="top"
+        expand="sm"
+        bg="light"
+        variant="light"
+      >
         <Navbar.Brand href="#home" className="px-5">
           <img
             width="250px"
-            height="140px"
+            height="100px"
             src={imgLogoLitoral}
-            alt="React Logo"
+            alt="Logo Litoral"
           />
         </Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse className="px-5 flex mr-auto justify-content-end">
+        <Navbar.Toggle aria-controls="nv-responsive" />
+        <Navbar.Collapse
+          id="nv-responsive"
+          className="px-5 flex mr-auto justify-content-end"
+        >
           <Nav.Link href="#descargar" className="sm-12">
             <a href={getBrochure} target="_blank" download>
               <img width="18px" height="20px" src={imgDescargarBrochure} />

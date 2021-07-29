@@ -59,8 +59,8 @@ const SlidersGaleria = () => {
                           src={image.src}
                           style={styles.img}
                           alt="galeria"
-                          width="800px"
-                          height="350px"
+                          width="500px"
+                          height="auto"
                         />
                       </div>
                     ))}
@@ -90,7 +90,7 @@ const SlidersGaleria = () => {
                   <Col className="md-12">
                     <Row className="justify-content-center">
                       <a
-                        href="/galeria/#menu"
+                        href="/galeria/"
                         style={{
                           fontSize: '22px',
                           textDecoration: 'none',

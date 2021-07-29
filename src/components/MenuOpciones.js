@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useHistory } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
+import ScrollTo from 'react-scroll-into-view';
 
 import imgEscudoPlayaVerde from '../assets/Recursos - LITORAL-59.svg'; // with import
 
@@ -20,15 +20,15 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
     />
   );
   let history = useHistory();
-  const handleRedirectHome = () => {
+  const handleRedirectHome = (e) => {
     handleCloseMenu();
-    history.push('/');
+    history.push('/#galeria');
   };
-  const handleRedirectDepartamentos = () => {
+  const handleRedirectDepartamentos = (e) => {
     handleCloseMenu();
     history.push('/departamentos');
   };
-  const handleRedirectCotizador = () => {
+  const handleRedirectCotizador = (e) => {
     handleCloseMenu();
     history.push('/cotizar');
   };
@@ -48,11 +48,12 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
             <Col className="md-9 justify-content-start">
               <Row id="01Litoral" className="pl-5">
                 <a
-                  href="/home/#menu"
+                  href="#menu"
                   style={{
                     fontSize: '22px',
                     textDecoration: 'none',
                     color: 'rgb(21,76, 94)',
+                    cursor: 'pointer',
                   }}
                   onClick={handleRedirectHome}
                 >
@@ -64,11 +65,12 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
               </Row>
               <Row id="02Galeria" className="pl-5">
                 <a
-                  href="/home/#galeria"
+                  href="#galeria"
                   style={{
                     fontSize: '22px',
                     textDecoration: 'none',
                     color: 'rgb(21,76, 94)',
+                    cursor: 'pointer',
                   }}
                   onClick={handleRedirectHome}
                 >
@@ -112,11 +114,12 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
               </Row>
               <Row id="05Ubicacion" className="pl-5">
                 <a
-                  href="/home/#ubicacion"
+                  href="#ubicacion"
                   style={{
                     fontSize: '22px',
                     textDecoration: 'none',
                     color: 'rgb(21,76, 94)',
+                    cursor: 'pointer',
                   }}
                   onClick={handleRedirectHome}
                 >
@@ -128,11 +131,12 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
               </Row>
               <Row id="06Contacto" className="pl-5">
                 <a
-                  href="/home/#contacto"
+                  href="#contacto"
                   style={{
                     fontSize: '22px',
                     textDecoration: 'none',
                     color: 'rgb(21,76, 94)',
+                    cursor: 'pointer',
                   }}
                   onClick={handleRedirectHome}
                 >

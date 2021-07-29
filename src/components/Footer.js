@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -26,37 +27,34 @@ const Footer = () => {
           height: '100px',
         }}
       >
-        <img className="imgLogoFooter" src={imgLogoLitoral} />
-        <img className="imgEstrellaFooter" src={imgEstrella} />
+        <Col md={6} xs={6}>
+          <img className="imgLogoFooter" src={imgLogoLitoral} />
+        </Col>
+        <Col md={6} xs={6}>
+          <img className="imgEstrellaFooter" src={imgEstrella} />
+        </Col>
       </Row>
       <Row
         style={{
-          height: '400px',
+          height: 'auto',
           backgroundColor: 'rgb(236, 236, 230)',
         }}
+        className="pb-5"
       >
         <Container className="pt-5 pl-5">
           <Row>
-            <Col className="md-4 pt-5">
-              <Row>
-                <span>Oficina ventas:</span>
-              </Row>
-              <Row>
-                <span>
-                  Local 13 Planta Alta, Plaza
-                  <br />
-                  Moombú en calle 7A1 x 24 y 22
-                  <br />
-                  Santa Gertrudis Copó.
-                </span>
-              </Row>
-              <Row className="pt-4">
-                <span>Descargar PDF</span>
-              </Row>
-              <Row>
-                <span>Brochure LITORAL</span>
-              </Row>
-              <Row className="pt-4">
+            <Col md={4} xs={7} className="pt-5">
+              <span>Oficina ventas:</span><br />
+              <span>
+                Local 13 Planta Alta, Plaza
+                <br />
+                Moombú en calle 7A1 x 24 y 22
+                <br />
+                Santa Gertrudis Copó.
+              </span><br /><br />
+              <div className="text-left float-left">
+                <span>Descargar PDF</span><br />
+                <span>Brochure LITORAL</span><br />
                 <a href={getBrochure} target="_blank" download>
                   <img
                     width="45px"
@@ -67,37 +65,29 @@ const Footer = () => {
                     }}
                   />
                 </a>
-              </Row>
+              </div>
             </Col>
-            <Col className="md-4 pt-5">
-              <Row>
-                <span>Siguenos en:</span>
-              </Row>
-              <Row>
-                <span>
-                  <img width="18px" src={imgFacebook} />
-                  &nbsp; <a href="#">Facebook</a>
-                  <br />
-                  <img width="18px" src={imgInstagram} />
-                  &nbsp; <a href="#">Instagram</a>
-                  <br />
-                  <img width="18px" src={imgYoutube} />
-                  &nbsp; <a href="#">Youtube</a>
-                </span>
-              </Row>
-              <Row className="pt-4">
-                <span>Contáctanos</span>
-              </Row>
-              <Row>
+            <Col md={4} xs={5} className="pt-5">
+              <span>Siguenos en:</span><br />
+              <span>
+                <img width="18px" src={imgFacebook} />
+                &nbsp; <a href="#">Facebook</a>
+                <br />
+                <img width="18px" src={imgInstagram} />
+                &nbsp; <a href="#">Instagram</a>
+                <br />
+                <img width="18px" src={imgYoutube} />
+                &nbsp; <a href="#">Youtube</a>
+              </span><br /><br />
+              <div className="text-left float-left">
+                <span>Contáctanos</span><br />
                 <span
                   style={{
                     cursor: 'pointer',
                   }}
                 >
                   hola@grupogpi.com
-                </span>
-              </Row>
-              <Row className="pt-4">
+                </span><br />
                 <img
                   width="45px"
                   height="45px"
@@ -107,9 +97,9 @@ const Footer = () => {
                   }}
                   onClick={handleShow}
                 />
-              </Row>
+              </div>
             </Col>
-            <Col className="md-4 pt-5">
+            <Col md={4} xs={6} className="py-5 pl-4">
               <Row>
                 <span>© 2021 Litoral Beach Apartaments</span>
               </Row>

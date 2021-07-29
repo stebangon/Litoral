@@ -1,13 +1,19 @@
 import React from 'react';
-
-import Jumbotron from 'react-bootstrap/Jumbotron';
-
 import ReactTooltip from 'react-tooltip';
+
+import imgPlano from '../assets/Plano Amenidades.jpg'; // with import
 
 function Amenidades() {
   return (
     <div>
-      <Jumbotron className="amenidades-bg" fluid></Jumbotron>
+      <img
+        src={imgPlano}
+        fluid
+        style={{
+          width: '100%',
+          height: 'auto',
+        }}
+      />
       <div
         id="punto1"
         className="punto1 d-none d-xl-block"

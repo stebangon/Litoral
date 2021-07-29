@@ -220,7 +220,7 @@ export default class Lightbox extends React.Component {
     let { x, y, zoom, rotate, multi, loading, moving } = this.state;
     let _reset = allowReset && this.shouldShowReset();
     return (
-      <div className="lb-container App">
+      <div className="lb-container">
         <div className="lb-header" style={{ justifyContent: buttonAlign }}>
           <Cond condition={buttonAlign === 'center' || _reset}>
             <div

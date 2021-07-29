@@ -198,8 +198,12 @@ function GaleriaPage() {
                       pagina === 0 ? 0 : pagina - 1
                     )}
                   >
-                    <img width="16px" src={imgPrev} />
-                    &nbsp;&nbsp;&nbsp;P R E V
+                    <Row>
+                      <img width="16px" src={imgPrev} />
+                      <span className="d-none d-md-block">
+                        &nbsp;&nbsp;&nbsp;P R E V
+                      </span>
+                    </Row>
                   </PaginationLink>
                 </PaginationItem>
                 <PaginationItem className="px-5">
@@ -222,8 +226,12 @@ function GaleriaPage() {
                       pagina === totalPaginas ? totalPaginas : pagina + 1
                     )}
                   >
-                    N E X T&nbsp;&nbsp;&nbsp;
-                    <img width="16px" src={imgNext} />
+                    <Row>
+                      <span className="d-none d-md-block">
+                        N E X T&nbsp;&nbsp;&nbsp;
+                      </span>
+                      <img width="16px" src={imgNext} />
+                    </Row>
                   </PaginationLink>
                 </PaginationItem>
                 <PaginationItem disabled={pagina === totalPaginas}>
