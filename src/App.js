@@ -48,9 +48,10 @@ function App() {
   const handleClose = () => setShow(false);
   return (
     <div className="App">
-      {/* <div id="menu">
+      <div id="menu">
         <NavMenu />
-      </div> */}
+      </div>
+      <div style={{ height: '80px' }}/>
       <Row className="pt-5">
         <Col>
           <Carousel>
@@ -166,7 +167,7 @@ function App() {
           </Col>
         </Row>
       </Container>
-      <Row>
+      <Row id="amenidades">
         <Col md={12} xs={12} className="pr-5 pb-5">
           <p className="pr-5" style={{ margin: 0, textAlign: 'end' }}>A M E N I D A D E S</p>
           <p className="pr-5" style={{ margin: 0, textAlign: 'end' }}>E X C L U S I V A S</p>

@@ -116,96 +116,7 @@
     width: auto;
     transform: translate(20%, 120%);
 }
-.img1DeptoT1N1{
-    background-image: url('./assets/deptot1n1/SALA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img2DeptoT1N1{
-    background-image: url('./assets/deptot1n1/RECÁMARA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img3DeptoT1N1{
-    background-image: url('./assets/deptot1n1/TERRAZA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img1DeptoT2N2{
-    background-image: url('./assets/deptot2n2/SALA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img2DeptoT2N2{
-    background-image: url('./assets/deptot2n2/RECÁMARA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img3DeptoT2N2{
-    background-image: url('./assets/deptot2n2/_TERRAZA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img1DeptoT3N2{
-    background-image: url('./assets/deptot3n2/SALA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img2DeptoT3N2{
-    background-image: url('./assets/deptot3n2/RECÁMARA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img3DeptoT3N2{
-    background-image: url('./assets/deptot3n2/TERRAZA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img1DeptoT4N2{
-    background-image: url('./assets/deptot4n2/SALA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img2DeptoT4N2{
-    background-image: url('./assets/deptot4n2/RECÁMARA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img3DeptoT4N2{
-    background-image: url('./assets/deptot4n2/_TERRAZA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img1DeptoPHt1{
-    background-image: url('./assets/deptoPHt1/ROOF.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img2DeptoPHt1{
-    background-image: url('./assets/deptoPHt1/RECÁMARA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img3DeptoPHt1{
-    background-image: url('./assets/deptoPHt1/_TERRAZA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img1DeptoPHt2{
-    background-image: url('./assets/deptoPHt2/SALA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img2DeptoPHt2{
-    background-image: url('./assets/deptoPHt2/RECÁMARA.jpg');
-    height: 100vh;
-    background-size: cover;
-}
-.img3DeptoPHt2{
-    background-image: url('./assets/deptoPHt2/ROOF.jpg');
-    height: 100vh;
-    background-size: cover;
-}
+
 .btnDepartamentos {
     background-color: rgba(241, 168, 153, 0);
     color: rgb(21, 76, 94);
@@ -353,7 +264,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(162px, -190px);
+    transform: translate(119px, -150px);
     z-index: 100;
   }
   .piso1-c {
@@ -361,7 +272,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(267px, -190px);
+    transform: translate(195px, -150px);
     z-index: 100;
   }
   .piso1-r {
@@ -369,7 +280,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(367px, -190px);
+    transform: translate(270px, -150px);
     z-index: 100;
   }
   .piso2-l {
@@ -377,7 +288,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(162px, -255px);
+    transform: translate(119px, -207px);
     z-index: 100;
   }
   .piso2-c {
@@ -385,7 +296,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(267px, -255px);
+    transform: translate(195px, -207px);
     z-index: 100;
   }
   .piso2-r {
@@ -393,7 +304,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(367px, -255px);
+    transform: translate(270px, -207px);
     z-index: 100;
   }
   .piso3-l {
@@ -401,7 +312,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(162px, -320px);
+    transform: translate(119px, -255px);
     z-index: 100;
   }
   .piso3-c {
@@ -409,7 +320,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(267px, -320px);
+    transform: translate(195px, -255px);
     z-index: 100;
   }
   .piso3-r {
@@ -417,7 +328,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(367px, -320px);
+    transform: translate(270px, -255px);
     z-index: 100;
   }
   .piso4-l {
@@ -425,7 +336,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(162px, -385px);
+    transform: translate(119px, -305px);
     z-index: 100;
   }
   .piso4-c {
@@ -433,7 +344,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(267px, -385px);
+    transform: translate(195px, -305px);
     z-index: 100;
   }
   .piso4-r {
@@ -441,7 +352,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(367px, -385px);
+    transform: translate(270px, -305px);
     z-index: 100;
   }
   .piso5-l {
@@ -449,7 +360,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(162px, -448px);
+    transform: translate(119px, -352px);
     z-index: 100;
   }
   .piso5-c {
@@ -457,7 +368,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(267px, -448px);
+    transform: translate(195px, -352px);
     z-index: 100;
   }
   .piso5-r {
@@ -465,7 +376,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(367px, -448px);
+    transform: translate(270px, -352px);
     z-index: 100;
   }
   .piso6-l {
@@ -473,7 +384,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(162px, -510px);
+    transform: translate(119px, -403px);
     z-index: 100;
   }
   .piso6-c {
@@ -481,7 +392,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(267px, -510px);
+    transform: translate(195px, -403px);
     z-index: 100;
   }
   .piso6-r {
@@ -489,7 +400,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(367px, -510px);
+    transform: translate(270px, -403px);
     z-index: 100;
   }
   .piso7-l {
@@ -497,7 +408,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(162px, -575px);
+    transform: translate(119px, -450px);
     z-index: 100;
   }
   .piso7-c {
@@ -505,7 +416,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(267px, -575px);
+    transform: translate(195px, -450px);
     z-index: 100;
   }
   .piso7-r {
@@ -513,7 +424,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(367px, -575px);
+    transform: translate(270px, -450px);
     z-index: 100;
   }
   .pisoph-l {
@@ -521,7 +432,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(162px, -668px);
+    transform: translate(119px, -528px);
     z-index: 100;
   }
   .pisoph-c {
@@ -529,7 +440,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(267px, -668px);
+    transform: translate(195px, -528px);
     z-index: 100;
   }
   .pisoph-r {
@@ -537,7 +448,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(367px, -668px);
+    transform: translate(270px, -528px);
     z-index: 100;
   }
   /*Termina cuadros de departamentos*/

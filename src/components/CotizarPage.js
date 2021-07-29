@@ -36,55 +36,55 @@ function CotizarPage() {
   function getCoordenadas(id) {
     switch (id) {
       case 'piso1-r':
-        return [329, 591, 329, 648, 430, 648, 430, 591];
+        return [242, 465, 242, 512, 316, 512, 316, 465]; //
       case 'piso1-c':
-        return [226, 591, 226, 648, 325, 648, 325, 591];
+        return [168, 465, 168, 512, 240, 512, 240, 465]; //
       case 'piso1-l':
-        return [121, 591, 121, 648, 221, 648, 221, 591];
+        return [91, 465, 91, 512, 165, 512, 165, 465]; //
       case 'piso2-r':
-        return [329, 528, 329, 585, 430, 585, 430, 528];
+        return [242, 416, 242, 460, 316, 460, 316, 416]; //
       case 'piso2-c':
-        return [226, 528, 226, 585, 325, 585, 325, 528];
+        return [168, 416, 168, 460, 240, 460, 240, 416]; //
       case 'piso2-l':
-        return [121, 528, 121, 585, 221, 585, 221, 528];
+        return [91, 416, 91, 460, 165, 460, 165, 416]; //
       case 'piso3-r':
-        return [329, 464, 329, 521, 430, 521, 430, 464];
+        return [242, 364, 242, 411, 316, 411, 316, 364]; //
       case 'piso3-c':
-        return [226, 464, 226, 521, 325, 521, 325, 464];
+        return [168, 364, 168, 411, 240, 411, 240, 364]; //
       case 'piso3-l':
-        return [121, 464, 121, 521, 221, 521, 221, 464];
+        return [91, 364, 91, 411, 165, 411, 165, 364]; //
       case 'piso4-r':
-        return [329, 401, 329, 458, 430, 458, 430, 401];
+        return [242, 315, 242, 360, 316, 360, 316, 315]; //
       case 'piso4-c':
-        return [226, 401, 226, 458, 325, 458, 325, 401];
+        return [168, 315, 168, 360, 240, 360, 240, 315]; //
       case 'piso4-l':
-        return [121, 401, 121, 458, 221, 458, 221, 401];
+        return [91, 315, 91, 360, 165, 360, 165, 315]; //
       case 'piso5-r':
-        return [329, 336, 329, 393, 430, 393, 430, 336];
+        return [242, 266, 242, 312, 316, 312, 316, 266]; //
       case 'piso5-c':
-        return [226, 336, 226, 393, 325, 393, 325, 336];
+        return [168, 266, 168, 312, 240, 312, 240, 266]; //
       case 'piso5-l':
-        return [121, 336, 121, 393, 221, 393, 221, 336];
+        return [91, 266, 91, 312, 165, 312, 165, 266]; //
       case 'piso6-r':
-        return [329, 273, 329, 330, 430, 330, 430, 273];
+        return [242, 213, 242, 260, 316, 260, 316, 213]; //
       case 'piso6-c':
-        return [226, 273, 226, 330, 325, 330, 325, 273];
+        return [168, 213, 168, 260, 240, 260, 240, 213]; //
       case 'piso6-l':
-        return [121, 273, 121, 330, 221, 330, 221, 273];
+        return [91, 213, 91, 260, 165, 260, 165, 213]; //
       case 'piso7-r':
-        return [329, 210, 329, 268, 430, 268, 430, 210];
+        return [242, 165, 242, 211, 316, 211, 316, 165]; //
       case 'piso7-c':
-        return [226, 210, 226, 268, 325, 268, 325, 210];
+        return [168, 165, 168, 211, 240, 211, 240, 165]; //
       case 'piso7-l':
-        return [121, 210, 121, 268, 221, 268, 221, 210];
+        return [91, 165, 91, 211, 165, 211, 165, 165]; //
       case 'pisoph-r':
-        return [329, 80, 329, 203, 430, 203, 430, 80];
+        return [242, 60, 242, 160, 316, 160, 316, 60]; //
       case 'pisoph-c':
-        return [226, 80, 226, 203, 325, 203, 325, 80];
+        return [168, 60, 168, 160, 240, 160, 240, 60]; //
       case 'pisoph-l':
-        return [121, 80, 121, 203, 221, 203, 221, 80];
+        return [91, 60, 91, 160, 165, 160, 165, 60]; //
       default:
-        return [329, 591, 329, 648, 430, 648, 430, 591];
+        return [0, 0, 0, 0, 0, 0, 0, 0]; //
     }
   }
   function getColorCuadro(estatus) {
@@ -164,94 +164,93 @@ function CotizarPage() {
       <div id="menu">
         <NavMenu />
       </div>
-      <div id="cuerpo" className="cotizar-bg">
-        <Row>
-          <Col className="md-4 align-self-center">
-            <Row className="pl-5 pb-5">
-              <span>Si está interesado en conocer LITORAL, <br />póngase en contacto con nosotros.</span>
-              <img
-                width="200px"
-                height="40px"
-                className="btnAgendarCita"
-                // src={imgAgendarCita}
-                style={{
-                  cursor: 'pointer',
-                }}
-                onClick={handleShow}
-              />
-            </Row>
-            <Row className="pl-0 pt-5">
-              <img
-                width="120px"
-                src={imgDesde}
-              />
-            </Row>
-          </Col>
-          <Col className="md-4">
-            <ImageMapper
-              src={edificio}
-              map={MAP}
-              height={800}
-              width={500}
-              onClick={(area) => {
-                handleClick(area);
+      <div style={{ height: '80px' }} />
+      <Row className="cotizar-bg">
+        <Col md={4} xs={12} className="align-self-center d-none d-sm-block">
+          <Row className="pl-5 pb-5">
+            <span>Si está interesado en conocer LITORAL, <br />póngase en contacto con nosotros.</span>
+            <img
+              width="200px"
+              height="40px"
+              className="btnAgendarCita"
+              // src={imgAgendarCita}
+              style={{
+                cursor: 'pointer',
               }}
+              onClick={handleShow}
             />
-            {departamentos.map((itemdepartamento) => (
-                <div>
-                  <div className={itemdepartamento[1].departamento}
-                    key={itemdepartamento[1].departamento}
-                    style={{
-                    backgroundColor: getColorIndicador(itemdepartamento[1].estatus),
-                    }} 
-                    data-tip
-                    data-for={itemdepartamento[1].departamento}
-                  /> 
-                  <ReactTooltip
-                    id={itemdepartamento[1].departamento}
-                    effect="solid"
-                    border={true}
-                    type={
-                      itemdepartamento[1].estatus === 'disponible'
-                      ? 'light'
-                      : itemdepartamento[1].estatus === 'vendido'
-                        ? 'error'
-                        : 'warning'}
-                  >
-                    DEPARTAMENTO <br />
-                    Tipo: {itemdepartamento[1].tipo} <br />
-                    M<sup>2</sup>: {itemdepartamento[1].m2} <br />
-                    Estatus: {itemdepartamento[1].estatus} <br />
-                  </ReactTooltip>
-                </div>
-              ))
-            }
-          </Col>
-          <Col className="md-4 align-self-center">
-            <Row className="pr-5 justify-content-end">
-              <span>DISPONIBLE</span>&nbsp;&nbsp;
-              <img
-                width="24px"
-                src={imgDisponible}
-              />
-            </Row>
-            <Row className="pr-5 pt-3 justify-content-end">
-              <span>VENDIDO</span>&nbsp;&nbsp;
-              <img
-                width="24px"
-                src={imgVendido}
-              />
-            </Row>
-            <Row className="pr-5 pt-3 justify-content-end">
-              <span>APARTADO</span>&nbsp;&nbsp;
-              <img
-                width="24px"
-                src={imgApartado}
-              />
-            </Row>
-          </Col>
-        </Row>
-      </div>
+          </Row>
+          <Row className="pl-0">
+            <img
+              width="120px"
+              src={imgDesde}
+            />
+          </Row>
+        </Col>
+        <Col md={4} xs={12} className="text-center float-center align-self-center">
+          <ImageMapper
+            src={edificio}
+            map={MAP}
+            height={630}
+            width={370}
+            onClick={(area) => {
+              handleClick(area);
+            }}
+          />
+          {departamentos.map((itemdepartamento) => (
+              <div>
+                <div className={itemdepartamento[1].departamento}
+                  key={itemdepartamento[1].departamento}
+                  style={{
+                  backgroundColor: getColorIndicador(itemdepartamento[1].estatus),
+                  }} 
+                  data-tip
+                  data-for={itemdepartamento[1].departamento}
+                /> 
+                <ReactTooltip
+                  id={itemdepartamento[1].departamento}
+                  effect="solid"
+                  border={true}
+                  type={
+                    itemdepartamento[1].estatus === 'disponible'
+                    ? 'light'
+                    : itemdepartamento[1].estatus === 'vendido'
+                      ? 'error'
+                      : 'warning'}
+                >
+                  DEPARTAMENTO <br />
+                  Tipo: {itemdepartamento[1].tipo} <br />
+                  M<sup>2</sup>: {itemdepartamento[1].m2} <br />
+                  Estatus: {itemdepartamento[1].estatus} <br />
+                </ReactTooltip>
+              </div>
+            ))
+          }
+        </Col>
+        <Col md={4} xs={12} className="text-center float-center align-self-center pb-5">
+          <Row className="pr-5 justify-content-end">
+            <span>DISPONIBLE</span>&nbsp;&nbsp;
+            <img
+              width="24px"
+              src={imgDisponible}
+            />
+          </Row>
+          <Row className="pr-5 pt-3 justify-content-end">
+            <span>VENDIDO</span>&nbsp;&nbsp;
+            <img
+              width="24px"
+              src={imgVendido}
+            />
+          </Row>
+          <Row className="pr-5 pt-3 justify-content-end">
+            <span>APARTADO</span>&nbsp;&nbsp;
+            <img
+              width="24px"
+              src={imgApartado}
+            />
+          </Row>
+        </Col>
+      </Row>
       <div id="footer">
         <Footer />
       </div>

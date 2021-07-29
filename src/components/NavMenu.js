@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -17,7 +17,16 @@ function NavMenu() {
   const handleClose = () => setShow(false);
   const handleShowMenu = () => setShowMenu(true);
   const handleCloseMenu = () => setShowMenu(false);
-  console.log('Entro nav menu');
+  const [showNavBar, setShowNavBar] = useState(true);
+  const controlaNavBar = () => {
+    window.scrollY > 100 ? setShowNavBar(false) : setShowNavBar(true);
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', controlaNavBar);
+    return () => {
+      window.removeEventListener('scroll', controlaNavBar);
+    };
+  }, []);
   return (
     <div>
       <Navbar
@@ -26,10 +35,11 @@ function NavMenu() {
         expand="sm"
         bg="light"
         variant="light"
+        hidden={!showNavBar}
       >
         <Navbar.Brand href="#home" className="px-5">
           <img
-            width="250px"
+            width="170px"
             height="100px"
             src={imgLogoLitoral}
             alt="Logo Litoral"

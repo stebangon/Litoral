@@ -169,6 +169,7 @@ function AdminGaleriaPage() {
       <div id="menu">
         <NavMenuAdmin />
       </div>
+      <div style={{ height: '140px' }} />
       <Container>
         <Row>
           <Col md="4">

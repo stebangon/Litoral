@@ -144,7 +144,8 @@ function GaleriaPage() {
       <div id="menu">
         <NavMenu />
       </div>
-      <div id="cuerpo">
+      <div style={{ height: '120px' }} />
+      <div id="cuerpo" className="pt-5">
         <Container>
           <div>
             <Row>

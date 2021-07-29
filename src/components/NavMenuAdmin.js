@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -18,15 +18,32 @@ function NavMenuAdmin() {
   const handleRedirectAdminGaleria = () => {
     history.push('/admingaleria');
   };
+  const [showNavBar, setShowNavBar] = useState(true);
+  const controlaNavBar = () => {
+    window.scrollY > 100 ? setShowNavBar(false) : setShowNavBar(true);
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', controlaNavBar);
+    return () => {
+      window.removeEventListener('scroll', controlaNavBar);
+    };
+  }, []);
   return (
     <div>
-      <Navbar>
+      <Navbar
+        collapseOnSelect
+        fixed="top"
+        expand="sm"
+        bg="light"
+        variant="light"
+        hidden={!showNavBar}
+      >
         <Navbar.Brand href="#home" className="px-5">
           <img
-            width="250px"
-            height="200px"
+            width="160px"
+            height="100px"
             src={imgLogoLitoral}
-            alt="React Logo"
+            alt="Logo Litoral"
           />
         </Navbar.Brand>
         <Navbar.Toggle />

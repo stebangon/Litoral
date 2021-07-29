@@ -134,6 +134,7 @@ function AdminDepartamentosPage() {
       <div id="menu">
         <NavMenuAdmin />
       </div>
+      <div style={{ height: '140px' }} />
       <div className="content">
         <Container>
           <Row>
