@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 
@@ -277,108 +278,172 @@ export default class Lightbox extends React.Component {
             onClick={(e) => this.exit(e)}
           ></div>
         </div>
-        <div
-          className={`lb-canvas${loading ? ' lb-loading' : ''}`}
+        <Row
           ref={this._cont}
           onClick={(e) => this.canvasClick(e)}
+          className='align-items-center'
           style={{
-            width: '800px',
             backgroundColor: 'rgba(236, 236, 230)',
           }}
         >
-          <Row className="align-items-center">
-            <Col
-              className="md-3"
+          <Col
+            md={3}
+            xs={12}
+            className="d-none d-md-block"
+            style={{
+              textAlign: 'end',
+              fontSize: '12px',
+              width: 'fit-content',
+            }}>
+            {title}
+            <br />
+            <br />
+            {subtitle}
+            <br />
+            <br />
+            <img width="25px" height="25px" src={imgSol} />
+            <img width="25px" height="25px" src={imgLuna} />
+            <br />
+            <br />
+            <br />
+            <a
+              href="/cotizar"
               style={{
-                textAlign: 'end',
-                fontSize: '12px',
-                marginRight: '60px',
-                maxWidth: '300px',
+                fontSize: '22px',
+                textDecoration: 'none',
+                color: 'rgb(21,76, 94)',
+                boxShadow: 'none !important',
+                outline: 'none',
               }}
             >
-              {title}
-              <br />
-              <br />
-              {subtitle}
-              <br />
-              <br />
-              <img width="25px" height="25px" src={imgSol} />
-              <img width="25px" height="25px" src={imgLuna} />
-              <br />
-              <br />
-              <br />
-              <a
-                href="/cotizar"
-                style={{
-                  fontSize: '22px',
-                  textDecoration: 'none',
-                  color: 'rgb(21,76, 94)',
-                  boxShadow: 'none !important',
-                  outline: 'none',
-                }}
-              >
-                <img width="160px" className="btnCotizar" />
-              </a>
-            </Col>
-            <Col
-              className="md-9"
+              <img width="160px" className="btnCotizar" />
+            </a>
+          </Col>
+          <Col md={9} xs={12} className="text-center float-center">
+            <img
+              draggable="false"
+              onMouseDown={(e) => this.startMove(e)}
+              onTouchStart={(e) => this.startMove(e)}
+              onMouseMove={(e) => this.duringMove(e)}
+              onTouchMove={(e) => this.duringMove(e)}
+              onMouseUp={(e) => this.endMove(e)}
+              onMouseLeave={(e) => this.endMove(e)}
+              onTouchEnd={(e) => this.endMove(e)}
+              onClick={(e) => this.stopSideEffect(e)}
+              onDoubleClick={(e) => this.shockZoom(e)}
+              onLoad={(e) => this.setState({ loading: false })}
+              src={image}
+              alt={title}
               style={{
-                textAlign: 'start',
-                paddingLeft: '0px',
-                backgroundColor: 'rgba(236, 236, 230, 0)',
+                maxWidth: '90%',
+                height: 'auto',
+              }}
+            />
+          </Col>
+        </Row>
+        {/* <Row
+          className={`align-items-center lb-canvas${loading ? ' lb-loading' : ''}`}
+          ref={this._cont}
+          onClick={(e) => this.canvasClick(e)}
+          style={{
+            width: 'fit-content',
+            maxWidth: '90%',
+            // display: '',
+            backgroundColor: 'rgba(236, 236, 230)',
+          }}
+        >
+          <Col
+            md={4}
+            xs={12}
+            style={{
+              textAlign: 'end',
+              fontSize: '12px',
+              width: 'fit-content',
+            }}
+            className="py-3"
+          >
+            {title}
+            <br />
+            <br />
+            {subtitle}
+            <br />
+            <br />
+            <img width="25px" height="25px" src={imgSol} />
+            <img width="25px" height="25px" src={imgLuna} />
+            <br />
+            <br />
+            <br />
+            <a
+              href="/cotizar"
+              style={{
+                fontSize: '22px',
+                textDecoration: 'none',
+                color: 'rgb(21,76, 94)',
+                boxShadow: 'none !important',
+                outline: 'none',
               }}
             >
-              <img
-                draggable="false"
-                style={{
-                  transform: this.createTransform(x, y, zoom, rotate),
-                  cursor: zoom > 1 ? 'grab' : 'unset',
-                  transition: moving ? 'none' : 'all 0.1s',
-                }}
-                onMouseDown={(e) => this.startMove(e)}
-                onTouchStart={(e) => this.startMove(e)}
-                onMouseMove={(e) => this.duringMove(e)}
-                onTouchMove={(e) => this.duringMove(e)}
-                onMouseUp={(e) => this.endMove(e)}
-                onMouseLeave={(e) => this.endMove(e)}
-                onTouchEnd={(e) => this.endMove(e)}
-                onClick={(e) => this.stopSideEffect(e)}
-                onDoubleClick={(e) => this.shockZoom(e)}
-                onLoad={(e) => this.setState({ loading: false })}
-                className={`lb-img${loading ? ' lb-loading' : ''}`}
-                height="auto"
-                width="400px"
-                title={title}
-                src={image}
-                alt={title}
-              />
-              <div className="mobile-controls lb-show-mobile">
-                {multi ? (
-                  <div
-                    title="Previous"
-                    className="lb-button lb-icon-arrow prev"
-                    onClick={(e) => this.navigateImage('prev', e)}
-                  ></div>
-                ) : null}
-                {_reset ? (
-                  <div
-                    title="Reset"
-                    className="lb-button lb-icon-reset reload"
-                    onClick={this.reset}
-                  ></div>
-                ) : null}
-                {multi ? (
-                  <div
-                    title="Next"
-                    className="lb-button lb-icon-arrow next"
-                    onClick={(e) => this.navigateImage('next', e)}
-                  ></div>
-                ) : null}
-              </div>
-            </Col>
-          </Row>
+              <img width="160px" className="btnCotizar" />
+            </a>
+          </Col>
+          <Col
+            md={8}
+            xs={12}
+            style={{
+              width: 'fit-content',
+              backgroundColor: 'rgba(236, 236, 230, 0)',
+            }}
+          >
+            <img
+              draggable="false"
+              style={{
+                width: '90%',
+                height: '75%',
+                transform: this.createTransform(x, y, zoom, rotate),
+                cursor: zoom > 1 ? 'grab' : 'unset',
+                transition: moving ? 'none' : 'all 0.1s',
+              }}
+              onMouseDown={(e) => this.startMove(e)}
+              onTouchStart={(e) => this.startMove(e)}
+              onMouseMove={(e) => this.duringMove(e)}
+              onTouchMove={(e) => this.duringMove(e)}
+              onMouseUp={(e) => this.endMove(e)}
+              onMouseLeave={(e) => this.endMove(e)}
+              onTouchEnd={(e) => this.endMove(e)}
+              onClick={(e) => this.stopSideEffect(e)}
+              onDoubleClick={(e) => this.shockZoom(e)}
+              onLoad={(e) => this.setState({ loading: false })}
+              className={`lb-img${loading ? ' lb-loading' : ''}`}
+              title={title}
+              src={image}
+              alt={title}
+            />
+            <div className="mobile-controls lb-show-mobile">
+              {multi ? (
+                <div
+                  title="Previous"
+                  className="lb-button lb-icon-arrow prev"
+                  onClick={(e) => this.navigateImage('prev', e)}
+                ></div>
+              ) : null}
+              {_reset ? (
+                <div
+                  title="Reset"
+                  className="lb-button lb-icon-reset reload"
+                  onClick={this.reset}
+                ></div>
+              ) : null}
+              {multi ? (
+                <div
+                  title="Next"
+                  className="lb-button lb-icon-arrow next"
+                  onClick={(e) => this.navigateImage('next', e)}
+                ></div>
+              ) : null}
+            </div>
+          </Col>
+        </Row> */}
         </div>
-      </div>
     );
   }
 }

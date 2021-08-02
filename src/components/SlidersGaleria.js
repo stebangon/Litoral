@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
@@ -10,6 +11,8 @@ import img02 from '../assets/02.jpg'; // with import
 import img03 from '../assets/03.jpg'; // with import
 import img04 from '../assets/04.jpg'; // with import
 import img05 from '../assets/05.jpg'; // with import
+import imgSol from '../assets/Recursos - LITORAL-07.svg'; // with import
+import imgLuna from '../assets/Recursos - LITORAL-08.svg'; // with import
 
 // Note: section under the <Timeline></Timeline>
 // but inside the pinContainer must be at least 100%
@@ -42,7 +45,7 @@ const SlidersGaleria = () => {
           {(progress) => (
             <div className="pin-container" style={styles.pinContainer}>
               <Timeline totalProgress={progress} paused>
-                <Tween from={{ x: '0%' }} to={{ x: '-50%' }}>
+                <Tween from={{ x: '0%' }} to={{ x: '-60%' }}>
                   <div
                     className="slide-container"
                     style={{
@@ -59,7 +62,7 @@ const SlidersGaleria = () => {
                           src={image.src}
                           style={styles.img}
                           alt="galeria"
-                          width="500px"
+                          // width="500px"
                           height="auto"
                         />
                       </div>
@@ -107,6 +110,34 @@ const SlidersGaleria = () => {
                     </Row>
                   </Col>
                 </Row>
+              </div>
+              <div>
+              <Row>
+                <Col md={9} xs={12} style={{ flexBasis: 'auto' }} className="p-5">
+                  <span className="text-break text-left float-left">
+                    PUERTO DE PROGRESO <br />
+                    <br />
+                    Vivir cerca del Puerto de Progreso te permite disfrutar de un
+                    maravilloso malecón con más de un kilometro de oportunidades
+                    para relajarte y ser feliz. <br />
+                    Además se encuentra a tan sólo 30 km de Mérida y es uno de los
+                    5 puertos comerciales más importantes del país. su sutuación
+                    geográfica es de suma importancia para la economía por su
+                    conectividad entre México y países externos como son Estados
+                    Unidos, Centro América, América del Sur y Europa.
+                  </span>
+                </Col>
+                <Col md={1} xs={12} className="pt-5 text-center float-center">
+                  <img width="25px" height="25px" src={imgSol} />
+                  <img width="25px" height="25px" src={imgLuna} />
+                </Col>
+                <Col md={2} xs={12} className="text-right float-right pt-5 pr-5">
+                  <span>La mayor plusvalía</span>
+                  <p style={{ textAlign: 'end', color: 'rgb(183, 98, 94)' }}>
+                    sobre costa yucateca
+                  </p>
+                </Col>
+              </Row>
               </div>
             </div>
           )}

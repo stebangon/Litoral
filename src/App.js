@@ -39,8 +39,8 @@ import imgGPS from './assets/Recursos - LITORAL-68.svg'; // with import
 import imgCarro from './assets/Recursos - LITORAL-69.svg'; // with import
 import imgAgendarCita from './assets/Recursos - LITORAL-84.svg'; // with import
 import imgBanner01 from './assets/Banner Progreso-01.png'; // with import
-import imgBanner02 from './assets/Banner Progreso-01.png'; // with import
-import imgBanner03 from './assets/Banner Progreso-01.png'; // with import
+import imgBanner02 from './assets/bannersprogreso2-01.png'; // with import
+import imgBanner03 from './assets/bannersprogreso2-02.png'; // with import
 
 function App() {
   const [show, setShow] = useState(false);
@@ -307,7 +307,7 @@ function App() {
           <SlidersGaleria />
         </Col>
       </Row>
-      <Row>
+      {/* <Row>
         <Col md={9} xs={12} style={{ flexBasis: 'auto' }} className="p-5">
           <span className="text-break text-left float-left">
             PUERTO DE PROGRESO <br />
@@ -332,7 +332,7 @@ function App() {
             sobre costa yucateca
           </p>
         </Col>
-      </Row>
+      </Row> */}
       <Row id="ubicacion">
         <Col md={12}>
           <img

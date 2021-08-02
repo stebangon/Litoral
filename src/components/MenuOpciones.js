@@ -22,7 +22,7 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
   let history = useHistory();
   const handleRedirectHome = (e) => {
     handleCloseMenu();
-    history.push('/#galeria');
+    history.push('/');
   };
   const handleRedirectDepartamentos = (e) => {
     handleCloseMenu();
@@ -31,6 +31,10 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
   const handleRedirectCotizador = (e) => {
     handleCloseMenu();
     history.push('/cotizar');
+  };
+  const handleRedirectGaleria = (e) => {
+    handleCloseMenu();
+    history.push('/galeria');
   };
   return (
     <div>
@@ -72,7 +76,7 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
                     color: 'rgb(21,76, 94)',
                     cursor: 'pointer',
                   }}
-                  onClick={handleRedirectHome}
+                  onClick={handleRedirectGaleria}
                 >
                   02 &nbsp;&nbsp; GALERIA/ AMENIDADES
                 </a>

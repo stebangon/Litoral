@@ -12,6 +12,7 @@ import { CardBody, CardFooter } from 'reactstrap';
 import { Button } from '@material-ui/core';
 import ReactTooltip from 'react-tooltip';
 
+import FormularioContacto from './FormularioContacto';
 import { loadDepartamentos } from '../apiRoutes';
 import NavMenu from './NavMenu';
 import Footer from './Footer';
@@ -217,6 +218,12 @@ function CotizarPage() {
                     : itemdepartamento[1].estatus === 'vendido'
                       ? 'error'
                       : 'warning'}
+                  place={
+                    itemdepartamento[1].departamento === 'pisoph-r' || 
+                    itemdepartamento[1].departamento === 'pisoph-c' ||
+                    itemdepartamento[1].departamento === 'pisoph-l' ?
+                    'bottom' : 'top'
+                  }
                 >
                   DEPARTAMENTO <br />
                   Tipo: {itemdepartamento[1].tipo} <br />
@@ -294,6 +301,7 @@ function CotizarPage() {
             </CardFooter>
           </Modal>
         ) : null}
+      <FormularioContacto handleClose={handleClose} show={show} />
     </div>
   );
 }

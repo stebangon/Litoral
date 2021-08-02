@@ -71,10 +71,10 @@ const Footer = () => {
               <span>Siguenos en:</span><br />
               <span>
                 <img width="18px" src={imgFacebook} />
-                &nbsp; <a href="#">Facebook</a>
+                &nbsp; <a href="https://www.facebook.com/LitoralBeachApartaments">Facebook</a>
                 <br />
                 <img width="18px" src={imgInstagram} />
-                &nbsp; <a href="#">Instagram</a>
+                &nbsp; <a href="https://www.instagram.com/litoral_beachapartaments/">Instagram</a>
                 <br />
                 <img width="18px" src={imgYoutube} />
                 &nbsp; <a href="#">Youtube</a>

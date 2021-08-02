@@ -41,14 +41,14 @@ import imgDeptoPHt1_2 from '../assets/deptoPHt1/PLANTA BAJA.jpg'; // with import
 import img1DeptoPHt1 from '../assets/deptoPHt1/ROOF.jpg';
 import img2DeptoPHt1 from '../assets/deptoPHt1/RECÁMARA.jpg';
 import img3DeptoPHt1 from '../assets/deptoPHt1/_TERRAZA.jpg';
-import imgUbicacionPHT1 from '../assets/deptoPHt1/Recursos - LITORAL-27.svg'; // with import
+import imgUbicacionPHT1 from '../assets/deptoPHt2/Recursos - LITORAL-24.svg'; // with import
 
 import imgDeptoPHt2 from '../assets/deptoPHt2/PLANTA ALTA.jpg'; // with import
 import imgDeptoPHt2_2 from '../assets/deptoPHt2/PLANTA BAJA.jpg'; // with import
 import img1DeptoPHt2 from '../assets/deptoPHt2/SALA.jpg';
 import img2DeptoPHt2 from '../assets/deptoPHt2/RECÁMARA.jpg';
 import img3DeptoPHt2 from '../assets/deptoPHt2/ROOF.jpg';
-import imgUbicacionPHT2 from '../assets/deptoPHt2/Recursos - LITORAL-24.svg'; // with import
+import imgUbicacionPHT2 from '../assets/deptoPHt1/Recursos - LITORAL-27.svg'; // with import
 
 import imgSol from '../assets/Recursos - LITORAL-07.svg'; // with import
 import imgLuna from '../assets/Recursos - LITORAL-08.svg'; // with import

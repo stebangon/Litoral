@@ -249,7 +249,7 @@ function GaleriaPage() {
         <ModalGateway>
           {viewerIsOpen ? (
             <Modal onClose={closeLightbox}>
-              <Row>
+              <Row className="mx-5 display">
                 <Lightbox startIndex={currentImage} images={photos}></Lightbox>
               </Row>
             </Modal>
