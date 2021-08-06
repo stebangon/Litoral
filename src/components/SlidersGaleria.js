@@ -73,7 +73,7 @@ const SlidersGaleria = () => {
               <div>
                 <Row>
                   <Col className="md-12">
-                    <Row className="justify-content-center">
+                    <Row className="px-5 justify-content-center">
                       <p
                         style={{
                           textAlign: 'center',

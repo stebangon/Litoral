@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
+import HubspotForm from 'react-hubspot-form';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -165,7 +166,7 @@ const FormularioContacto = ({ handleClose, show }) => {
                   pondremos en contacto con usted.
                 </span>
               </Row>
-              <Form
+              {/* <Form
                 onSubmit={(e) => {
                   e.preventDefault();
                   toast.info('Enviado solicitud de información...', {
@@ -345,7 +346,15 @@ const FormularioContacto = ({ handleClose, show }) => {
                   width="100px"
                   src={imgEnviar}
                 />
-              </Form>
+              </Form> */}
+              <br />
+              <HubspotForm
+                portalId="20301597"
+                formId="2a040f0c-0847-4376-849b-b3befa742638"
+                onSubmit={() => console.log('Submit!')}
+                onReady={(form) => console.log('Form ready!')}
+                loading={<div></div>}
+              />
             </Col>
           </Row>
         </Modal.Body>

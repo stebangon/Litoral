@@ -13,7 +13,7 @@ import imgDescargarBrochure2 from '../assets/Recursos - LITORAL-67.svg'; // with
 import imgEmail from '../assets/Recursos - LITORAL-71.svg'; // with import
 import imgGPI from '../assets/Recursos - LITORAL-54.svg'; // with import
 import imgInstagram from '../assets/Recursos - LITORAL-16.svg'; // with import
-import imgYoutube from '../assets/Recursos - LITORAL-12.svg'; // with import
+// import imgYoutube from '../assets/Recursos - LITORAL-12.svg'; // with import
 import imgFacebook from '../assets/Recursos - LITORAL-05.svg'; // with import
 
 const Footer = () => {
@@ -76,8 +76,9 @@ const Footer = () => {
                 <img width="18px" src={imgInstagram} />
                 &nbsp; <a href="https://www.instagram.com/litoral_beachapartaments/">Instagram</a>
                 <br />
-                <img width="18px" src={imgYoutube} />
-                &nbsp; <a href="#">Youtube</a>
+                {/* <img width="18px" src={imgYoutube} />
+                &nbsp; <a href="#">Youtube</a> */}
+                <span>Tel: (999) 920 21 09</span>
               </span><br /><br />
               <div className="text-left float-left">
                 <span>Contáctanos</span><br />
@@ -85,6 +86,7 @@ const Footer = () => {
                   style={{
                     cursor: 'pointer',
                   }}
+                  className="text-break"
                 >
                   hola@grupogpi.com
                 </span><br />
@@ -105,7 +107,7 @@ const Footer = () => {
               </Row>
               <Row>
                 <span>
-                  <a href="#">Aviso de privacidad</a>
+                  <a href="https://www.grupogpi.com/aviso-de-privacidad">Aviso de privacidad</a>
                   <br />
                   <a href="#">Avisos legales</a>
                 </span>

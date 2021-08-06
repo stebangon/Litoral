@@ -57,7 +57,7 @@ const handleClickLogin = (e) => {
     //     {
             //Hacemos el dispatch para guardar en el store
             //los datos de usuario.
-            if (usuario === 'prueba' && password === 'prueba')
+            if (usuario === 'litoral' && password === 'L1tor@l2021.')
             {
                 dispatch(
                     login(

@@ -1,14 +1,15 @@
 import firebase from 'firebase';
 
 var firebaseConfig = {
-  apiKey: 'AIzaSyBcEWfoSbR1OOgGvrUAcG_ZI1DW-dI8Py0',
-  authDomain: 'litoral-df396.firebaseapp.com',
-  databaseURL: 'https://litoral-df396-default-rtdb.firebaseio.com',
-  projectId: 'litoral-df396',
-  storageBucket: 'litoral-df396.appspot.com',
-  messagingSenderId: '1044962665892',
-  appId: '1:1044962665892:web:a7f44b5d12f344efd98d31',
+  apiKey: 'AIzaSyCaY7p5MMdxMpf0vROZSTyVApHD-iUHNeE',
+  authDomain: 'litoral-866cd.firebaseapp.com',
+  databaseURL: 'https://litoral-866cd-default-rtdb.firebaseio.com',
+  projectId: 'litoral-866cd',
+  storageBucket: 'litoral-866cd.appspot.com',
+  messagingSenderId: '495295935883',
+  appId: '1:495295935883:web:6104b034126862e75aab8e',
 };
+
 // Initialize Firebase
 !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
 var fireDB = firebase;

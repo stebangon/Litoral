@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import fireDB from '../firebase';
-import { loadGalerias } from '../apiRoutes';
+import { cargarImagenes, loadGalerias } from '../apiRoutes';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -93,10 +93,7 @@ function AdminGaleriaPage() {
         body: formdata,
         redirect: 'follow',
       };
-      fetch(
-        'https://api.cloudinary.com/v1_1/dxgbjb7n1/image/upload?upload_preset=ny3fo6y0',
-        requestOptions
-      )
+      fetch(cargarImagenes, requestOptions)
         .then((res) => res.json())
         .then((data) => {
           // Recuperamos la url de la foto

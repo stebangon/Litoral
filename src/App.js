@@ -141,7 +141,14 @@ function App() {
               </Container>
             </Row>
             <Row>
-              <img fluid src={imgVive} />
+              <img
+                fluid
+                src={imgVive} 
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                }}
+            />
             </Row>
             <Row className="pt-5">
               <Col md={6} className="text-left float-left">
@@ -368,7 +375,7 @@ function App() {
                 <Col md={1} style={{ textAlign: 'end'}}>
                   <Row className="justify-content-center">
                     <a
-                      href="https://www.google.com.mx/maps/@20.9861506,-89.6910211,15z"
+                      href="https://goo.gl/maps/c76oJ57acuA6i27d8"
                       target="_blank"
                     >
                       <img width="60px" height="60px" src={imgGPS} />
@@ -382,7 +389,15 @@ function App() {
             </Col>
             <Col md={2} xs={6} className="pt-5 text-right float-right">
               <Row className="justify-content-center">
-                <img width="60px" height="60px" src={imgCarro} />
+                <img
+                  width="60px"
+                  height="60px"
+                  src={imgCarro}
+                  onClick={handleShow}
+                  style={{
+                    cursor: 'pointer',
+                  }}
+                />
               </Row>
               <Row className="justify-content-center">
                 <span style={{ fontSize: '12px' }}>Hacer recorrido</span>
@@ -402,7 +417,7 @@ function App() {
               className="text-break"
             >
               Contáctanos ahora <br />
-              para conocer mas de LITORE
+              para conocer mas de LITORAL
             </p>
           </Row>
         </Col>

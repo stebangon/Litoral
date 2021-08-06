@@ -36,8 +36,9 @@ function NavMenu() {
         bg="light"
         variant="light"
         hidden={!showNavBar}
+        className="pr-4"
       >
-        <Navbar.Brand href="#home" className="px-5">
+        <Navbar.Brand href="#home" className="pl-5">
           <img
             width="170px"
             height="100px"
@@ -48,7 +49,7 @@ function NavMenu() {
         <Navbar.Toggle aria-controls="nv-responsive" />
         <Navbar.Collapse
           id="nv-responsive"
-          className="px-5 flex mr-auto justify-content-end"
+          className="flex mr-auto justify-content-end"
         >
           <Nav.Link href="#descargar" className="sm-12">
             <a href={getBrochure} target="_blank" download>
