@@ -126,7 +126,7 @@ function GaleriaPage() {
               src: galeria[i][1].img,
               title: galeria[i][1].titulo,
               subtitle: galeria[i][1].subtitulo,
-              width: Math.floor(Math.random() * 4) + 3,
+              width: 4, // width: Math.floor(Math.random() * 4) + 3,
               height: 3,
             });
             console.log(tempPhotos);

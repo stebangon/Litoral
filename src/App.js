@@ -86,17 +86,17 @@ function App() {
               <Col md={6}>
                 <Row>
                   <Col md={12}>
-                    <span style={{ textAlign: 'start' }}>
-                      Stylish. Elegant. Exclusive
+                    <span style={{ textAlign: 'start', color: 'rgb(183, 98, 94)' }}>
+                      Chicxulub Puerto
                     </span>
                   </Col>
-                  <Col md={12}>
+                  {/* <Col md={12}>
                     <p
                       style={{ textAlign: 'start', color: 'rgb(183, 98, 94)' }}
                     >
                       Chicxulub Puerto
                     </p>
-                  </Col>
+                  </Col> */}
                 </Row>
               </Col>
               <Col md={6}>
@@ -105,7 +105,7 @@ function App() {
                     textAlign: 'end',
                   }}
                 >
-                  P E N T H O U S E S
+                  DEPARTAMENTOS FRENTE AL MAR
                 </p>
               </Col>
               <Col md={12}>
@@ -124,11 +124,11 @@ function App() {
               </Col>
               <Col md={10}>
                 <p className="text-left float-left text-break">
-                  Entrégate al mar qué en cada brisa del viento deja una parte
+                  {/* Entrégate al mar qué en cada brisa del viento deja una parte
                   de él en ti, haciéndote sentir la libertad al sonido de las
                   olas; Disfruta del sol que te acaricia en la arena con cada
                   rayo de luz en tu piel compartiendo un tiempo de felicidad y
-                  libertad con la naturaleza.
+                  libertad con la naturaleza. */}
                 </p>
               </Col>
               <Col md={2} className="text-right float-right">
@@ -195,7 +195,7 @@ function App() {
         </Col>
         <Col md={6} className="px-5 py-4">
           <Row className="justify-content-center">
-            <Col md={3} xs={4}>
+            <Col md={3} xs={4} className="pb-4">
               <Row className="justify-content-center">
                 <img width="45px" height="45px" src={imgAccesoControlado} />
               </Row>
@@ -280,9 +280,35 @@ function App() {
                 y motor lobby
               </Row>
             </Col>
+            <Col md={3} xs={4} className="d-block d-sm-none">
+              <Row className="justify-content-center">
+                <a href={getBrochure} target="_blank" download>
+                  <img
+                    width="45px"
+                    height="45px"
+                    src={imgDescargarBrochure2}
+                    style={{
+                      cursor: 'pointer',
+                    }}
+                  />
+                </a>
+              </Row>
+              <Row
+                className="pt-2 justify-content-center"
+                style={{ fontSize: '12px', color: 'rgb(183, 98, 94)' }}
+              >
+                Descagar PDF
+              </Row>
+              <Row
+                className="justify-content-center"
+                style={{ fontSize: '12px', color: 'rgb(183, 98, 94)' }}
+              >
+                Brochure LITORAL
+              </Row>
+            </Col>
           </Row>
         </Col>
-        <Col md={3} xs={12} style={{ textAlign: 'end' }} className="pt-4">
+        <Col md={3} xs={12} style={{ textAlign: 'end' }} className="pt-4 d-none d-xl-block">
           <Row className="justify-content-center">
             <a href={getBrochure} target="_blank" download>
               <img

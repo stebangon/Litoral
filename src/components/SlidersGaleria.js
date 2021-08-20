@@ -71,7 +71,7 @@ const SlidersGaleria = () => {
                 </Tween>
               </Timeline>
               <div>
-                <Row>
+                {/* <Row>
                   <Col className="md-12">
                     <Row className="px-5 justify-content-center">
                       <p
@@ -88,7 +88,7 @@ const SlidersGaleria = () => {
                       </p>
                     </Row>
                   </Col>
-                </Row>
+                </Row> */}
                 <Row>
                   <Col className="md-12">
                     <Row className="justify-content-center">

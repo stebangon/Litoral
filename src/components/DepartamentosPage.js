@@ -85,9 +85,9 @@ function DepartamentosPage() {
   function renderUbicacionesPortada() {
     switch (tipodepto) {
       case 1:
-        return imgUbicacionT1N1;
-      case 2:
         return imgUbicacionT2N2;
+      case 2:
+        return imgUbicacionT1N1;  
       case 3:
         return imgUbicacionT3N2;
       case 4:
@@ -420,7 +420,7 @@ function DepartamentosPage() {
                     }}
                     onClick={setTipodepto.bind(this, 1)}
                   >
-                    DEPTO TIPO A
+                    DEPTO TIPO A & C
                   </Button>
                   <Button
                     className="btnDepartamentos"
@@ -457,7 +457,7 @@ function DepartamentosPage() {
                     }}
                     onClick={setTipodepto.bind(this, 3)}
                   >
-                    DEPTO TIPO A
+                    DEPTO TIPO A & C
                   </Button>
                   <Button
                     className="btnDepartamentos"
@@ -494,7 +494,7 @@ function DepartamentosPage() {
                     }}
                     onClick={setTipodepto.bind(this, 5)}
                   >
-                    PENTHOUSE TIPO A
+                    PENTHOUSE TIPO A & C
                   </Button>
                   <Button
                     className="btnDepartamentos"
