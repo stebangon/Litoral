@@ -28,11 +28,20 @@ import imgVive from './assets/Recursos - LITORAL-56.svg'; // with import
 import imgSol from './assets/Recursos - LITORAL-07.svg'; // with import
 import imgLuna from './assets/Recursos - LITORAL-08.svg'; // with import
 import imgEstrella from './assets/Recursos - LITORAL-55.svg'; // with import
-import imgAccesoControlado from './assets/Recursos - LITORAL-61.svg'; // with import
-import imgCasetaVig from './assets/Recursos - LITORAL-62.svg'; // with import
-import imgTerrazaTechada from './assets/Recursos - LITORAL-63.svg'; // with import
-import imgAreaYoga from './assets/Recursos - LITORAL-64.svg'; // with import
-import imgParking from './assets/Recursos - LITORAL-65.svg'; // with import
+import imgAME_AccesoControlado from './assets/AME_ACCESO CONTROLADO.svg'; // with import
+import imgAME_CasetaVig from './assets/AME_CASETA DE VIGILANCIA.svg'; // with import
+import imgAME_TerrazaTechada from './assets/AME_TERRAZA TECHADA.svg'; // with import
+import imgAME_AreaYoga from './assets/AME_YOGA.svg'; // with import
+import imgAME_Parking from './assets/AME_PARKING AND MOTOR LOBBY.svg'; // with import
+import imgAME_AreaPlaya from './assets/AME_AREADEPLAYA.svg'; // with import
+import imgAME_Baños from './assets/AME_BANOS.svg'; // with import
+import imgAME_Bar from './assets/AME_BAR.svg'; // with import
+import imgAME_BeachLounge from './assets/AME_BEACH_LOUNGE.svg'; // with import
+import imgAME_Bodegas from './assets/AME_BODEGAS.svg'; // with import
+import imgAME_GamesRoom from './assets/AME_GAMESROOM.svg'; // with import
+import imgAME_Gym from './assets/AME_GYM.svg'; // with import
+import imgAME_Picinas from './assets/AME_PISCINAS & KIDS POOL.svg'; // with import
+import imgAME_PrivateSunBeach from './assets/AME_PRIVATE SUN BEACH.svg'; // with import
 import imgDescargarBrochure2 from './assets/Recursos - LITORAL-67.svg'; // with import
 import imgWhatsapp from './assets/Recursos - LITORAL-60.svg'; // with import
 import imgGPS from './assets/Recursos - LITORAL-68.svg'; // with import
@@ -182,133 +191,33 @@ function App() {
         <Col md={12} className="pb-4">
           <Amenidades/>
         </Col>
-        <Col
-          className="pl-5 pt-5"
-          md={3}
-          color="red"
-          style={{ textAlign: 'start', maxWidth: '250px' }}
-        >
-          <span style={{ textAlign: 'start' }}>Un paraiso tropical</span>
-          <p style={{ textAlign: 'start', color: 'rgb(183, 98, 94)' }}>
-            en la costa yucateca
-          </p>
-        </Col>
-        <Col md={6} className="px-5 py-4">
-          <Row className="justify-content-center">
-            <Col md={3} xs={4} className="pb-4">
+        <Col md={10} className="px-2 py-2">
+          <Row className="px-5 justify-content-center">
+            <Col md={12} xs={6} className="pb-4 px-3">
               <Row className="justify-content-center">
-                <img width="45px" height="45px" src={imgAccesoControlado} />
-              </Row>
-              <Row
-                className="justify-content-center"
-                style={{ fontSize: '12px' }}
-              >
-                Acceso
-              </Row>
-              <Row
-                className="justify-content-center"
-                style={{ fontSize: '12px' }}
-              >
-                controlado
+                <img width="160px" height="160px" src={imgAME_AccesoControlado} />
+                <img width="160px" height="160px" src={imgAME_CasetaVig} />
+                <img width="160px" height="160px" src={imgAME_TerrazaTechada} />
+                <img width="160px" height="160px" src={imgAME_AreaYoga} />
+                <img width="160px" height="160px" src={imgAME_Parking} />
+                <img width="160px" height="160px" src={imgAME_Bar} />
+                <img width="160px" height="160px" src={imgAME_BeachLounge} />
               </Row>
             </Col>
-            <Col md={2} xs={4}>
+            <Col md={12} xs={6} className="pb-4 px-3">
               <Row className="justify-content-center">
-                <img width="45px" height="45px" src={imgCasetaVig} />
-              </Row>
-              <Row
-                className="justify-content-center"
-                style={{ fontSize: '12px' }}
-              >
-                Caseta
-              </Row>
-              <Row
-                className="justify-content-center"
-                style={{ fontSize: '12px' }}
-              >
-                de vigilancia
-              </Row>
-            </Col>
-            <Col md={2} xs={4}>
-              <Row className="justify-content-center">
-                <img width="45px" height="45px" src={imgTerrazaTechada} />
-              </Row>
-              <Row
-                className="justify-content-center"
-                style={{ fontSize: '12px' }}
-              >
-                Terraza
-              </Row>
-              <Row
-                className="justify-content-center"
-                style={{ fontSize: '12px' }}
-              >
-                techada
-              </Row>
-            </Col>
-            <Col md={2} xs={4}>
-              <Row className="justify-content-center">
-                <img width="45px" height="45px" src={imgAreaYoga} />
-              </Row>
-              <Row
-                className="justify-content-center"
-                style={{ fontSize: '12px' }}
-              >
-                Área de yoga
-              </Row>
-              <Row
-                className="justify-content-center"
-                style={{ fontSize: '12px' }}
-              >
-                y meditación
-              </Row>
-            </Col>
-            <Col md={3} xs={4}>
-              <Row className="justify-content-center">
-                <img width="45px" height="45px" src={imgParking} />
-              </Row>
-              <Row
-                className="justify-content-center"
-                style={{ fontSize: '12px' }}
-              >
-                Parking
-              </Row>
-              <Row
-                className="justify-content-center"
-                style={{ fontSize: '12px' }}
-              >
-                y motor lobby
-              </Row>
-            </Col>
-            <Col md={3} xs={4} className="d-block d-sm-none">
-              <Row className="justify-content-center">
-                <a href={getBrochure} target="_blank" download>
-                  <img
-                    width="45px"
-                    height="45px"
-                    src={imgDescargarBrochure2}
-                    style={{
-                      cursor: 'pointer',
-                    }}
-                  />
-                </a>
-              </Row>
-              <Row
-                className="pt-2 justify-content-center"
-                style={{ fontSize: '12px', color: 'rgb(183, 98, 94)' }}
-              >
-                Descagar PDF
-              </Row>
-              <Row
-                className="justify-content-center"
-                style={{ fontSize: '12px', color: 'rgb(183, 98, 94)' }}
-              >
-                Brochure LITORAL
+                <img width="160px" height="160px" src={imgAME_GamesRoom} />
+                <img width="160px" height="160px" src={imgAME_Gym} />
+                <img width="160px" height="160px" src={imgAME_Picinas} />
+                <img width="160px" height="160px" src={imgAME_PrivateSunBeach} />
+                <img width="160px" height="160px" src={imgAME_AreaPlaya} />
+                <img width="160px" height="160px" src={imgAME_Baños} />
+                <img width="160px" height="160px" src={imgAME_Bodegas} />
               </Row>
             </Col>
           </Row>
         </Col>
-        <Col md={3} xs={12} style={{ textAlign: 'end' }} className="pt-4 d-none d-xl-block">
+        <Col md={2} xs={12} className="align-self-center px-5">
           <Row className="justify-content-center">
             <a href={getBrochure} target="_blank" download>
               <img
@@ -340,32 +249,6 @@ function App() {
           <SlidersGaleria />
         </Col>
       </Row>
-      {/* <Row>
-        <Col md={9} xs={12} style={{ flexBasis: 'auto' }} className="p-5">
-          <span className="text-break text-left float-left">
-            PUERTO DE PROGRESO <br />
-            <br />
-            Vivir cerca del Puerto de Progreso te permite disfrutar de un
-            maravilloso malecón con más de un kilometro de oportunidades
-            para relajarte y ser feliz. <br />
-            Además se encuentra a tan sólo 30 km de Mérida y es uno de los
-            5 puertos comerciales más importantes del país. su sutuación
-            geográfica es de suma importancia para la economía por su
-            conectividad entre México y países externos como son Estados
-            Unidos, Centro América, América del Sur y Europa.
-          </span>
-        </Col>
-        <Col md={1} xs={12} className="pt-5 text-center float-center">
-          <img width="25px" height="25px" src={imgSol} />
-          <img width="25px" height="25px" src={imgLuna} />
-        </Col>
-        <Col md={2} xs={12} className="text-right float-right pt-5 pr-5">
-          <span>La mayor plusvalía</span>
-          <p style={{ textAlign: 'end', color: 'rgb(183, 98, 94)' }}>
-            sobre costa yucateca
-          </p>
-        </Col>
-      </Row> */}
       <Row id="ubicacion">
         <Col md={12}>
           <img

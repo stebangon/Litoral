@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
-import Jumbotron from 'react-bootstrap/Jumbotron';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 import Footer from './Footer';
 import NavMenu from './NavMenu';
@@ -766,11 +766,38 @@ function DepartamentosPage() {
               </Row>
             </Col>
           </Row>
+          <Row>
+            <Col md={12} className="pt-5 text-center float-center">
+              <Link 
+                style={{
+                  fontFamily: 'OpenSans-Regular',
+                  fontSize: '18px',
+                  color: 'white',
+                  backgroundColor: 'rgb(21, 76, 94)',
+                  textDecoration: 'none',
+                  padding: '5px 10px 5px 10px',
+                  borderTop: '1px solid #CCCCCC',
+                  borderRight: '1px solid #333333',
+                  borderBottom: '1px solid #333333',
+                  borderLeft: '1px solid #CCCCCC',
+                  cursor: 'pointer',
+                }}
+                activeClass="active"
+                to="imagenes"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
+                Ver fotos ...
+              </Link>
+            </Col>
+          </Row>
         </Container>
-        <div id="imagenes" className="pt-5">
+        <div id="Renders" className="pt-5">
           <br />
           <Row>
-            <Col>
+            <Col id="imagenes">
               <img src={renderImagenes()[0]}
                 fluid
                 style={{
@@ -778,10 +805,6 @@ function DepartamentosPage() {
                   height: 'auto',
                 }}
               />
-              {/* <Jumbotron src={renderImagenes()[0]} fluid style={{
-                  width: '100%',
-                  height: '100%',
-                }}></Jumbotron> */}
             </Col>
           </Row>
           <br />
@@ -794,7 +817,6 @@ function DepartamentosPage() {
                   height: 'auto',
                 }}
               />
-              {/* <Jumbotron className={renderImagenes()[1]} fluid></Jumbotron> */}
             </Col>
           </Row>
           <br />

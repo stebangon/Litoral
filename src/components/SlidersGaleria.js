@@ -29,9 +29,9 @@ const SlidersGaleria = () => {
     images: [
       { id: 1, src: img01 },
       { id: 2, src: img02 },
-      { id: 3, src: img03 },
-      { id: 4, src: img04 },
-      { id: 5, src: img05 },
+      // { id: 3, src: img03 },
+      // { id: 4, src: img04 },
+      // { id: 5, src: img05 },
     ],
   });
   let history = useHistory();
@@ -41,11 +41,12 @@ const SlidersGaleria = () => {
   return (
     <div>
       <Controller>
-        <Scene triggerHook="onLeave" duration={2000} pin>
+        <Scene triggerHook="onLeave" duration={10} pin>
           {(progress) => (
             <div className="pin-container" style={styles.pinContainer}>
               <Timeline totalProgress={progress} paused>
-                <Tween from={{ x: '0%' }} to={{ x: '-60%' }}>
+                {/* <Tween from={{ x: '0%' }} to={{ x: '-60%' }}> */}
+                <Tween from={{ x: '0%' }} to={{ x: '1%' }}>
                   <div
                     className="slide-container"
                     style={{
@@ -71,24 +72,6 @@ const SlidersGaleria = () => {
                 </Tween>
               </Timeline>
               <div>
-                {/* <Row>
-                  <Col className="md-12">
-                    <Row className="px-5 justify-content-center">
-                      <p
-                        style={{
-                          textAlign: 'center',
-                          maxWidth: '550px',
-                        }}
-                        className="text-break"
-                      >
-                        Las personas que se centran en los detalles son más
-                        inteligentes, más maduras emocionalmente, tienen
-                        historias más emocionantes que contar y están condenadas
-                        al éxito.
-                      </p>
-                    </Row>
-                  </Col>
-                </Row> */}
                 <Row>
                   <Col className="md-12">
                     <Row className="justify-content-center">
@@ -112,32 +95,32 @@ const SlidersGaleria = () => {
                 </Row>
               </div>
               <div>
-              <Row>
-                <Col md={9} xs={12} style={{ flexBasis: 'auto' }} className="p-5">
-                  <span className="text-break text-left float-left">
-                    PUERTO DE PROGRESO <br />
-                    <br />
-                    Vivir cerca del Puerto de Progreso te permite disfrutar de un
-                    maravilloso malecón con más de un kilometro de oportunidades
-                    para relajarte y ser feliz. <br />
-                    Además se encuentra a tan sólo 30 km de Mérida y es uno de los
-                    5 puertos comerciales más importantes del país. su sutuación
-                    geográfica es de suma importancia para la economía por su
-                    conectividad entre México y países externos como son Estados
-                    Unidos, Centro América, América del Sur y Europa.
-                  </span>
-                </Col>
-                <Col md={1} xs={12} className="pt-5 text-center float-center">
-                  <img width="25px" height="25px" src={imgSol} />
-                  <img width="25px" height="25px" src={imgLuna} />
-                </Col>
-                <Col md={2} xs={12} className="text-right float-right pt-5 pr-5">
-                  <span>La mayor plusvalía</span>
-                  <p style={{ textAlign: 'end', color: 'rgb(183, 98, 94)' }}>
-                    sobre costa yucateca
-                  </p>
-                </Col>
-              </Row>
+                <Row>
+                  <Col md={9} xs={12} style={{ flexBasis: 'auto' }} className="p-5">
+                    <span className="text-break text-left float-left">
+                      PUERTO DE PROGRESO <br />
+                      <br />
+                      Vivir cerca del Puerto de Progreso te permite disfrutar de un
+                      maravilloso malecón con más de un kilometro de oportunidades
+                      para relajarte y ser feliz. <br />
+                      Además se encuentra a tan sólo 30 km de Mérida y es uno de los
+                      5 puertos comerciales más importantes del país. su sutuación
+                      geográfica es de suma importancia para la economía por su
+                      conectividad entre México y países externos como son Estados
+                      Unidos, Centro América, América del Sur y Europa.
+                    </span>
+                  </Col>
+                  <Col md={1} xs={12} className="pt-5 text-center float-center">
+                    <img width="25px" height="25px" src={imgSol} />
+                    <img width="25px" height="25px" src={imgLuna} />
+                  </Col>
+                  <Col md={2} xs={12} className="text-right float-right pt-5 pr-5">
+                    <span>La mayor plusvalía</span>
+                    <p style={{ textAlign: 'end', color: 'rgb(183, 98, 94)' }}>
+                      sobre costa yucateca
+                    </p>
+                  </Col>
+                </Row>
               </div>
             </div>
           )}
@@ -163,7 +146,7 @@ const styles = {
   slideContainer: {
     padding: '40px 0',
     display: 'flex',
-    width: '240%',
+    width: '100%',
   },
   panel: {
     flex: 1,
