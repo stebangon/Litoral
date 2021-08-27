@@ -52,7 +52,7 @@ const MenuOpciones = ({ handleCloseMenu, showMenu }) => {
             <Col className="md-9 justify-content-start">
               <Row id="01Litoral" className="pl-5">
                 <a
-                  href="#menu"
+                  href=""
                   style={{
                     fontSize: '22px',
                     textDecoration: 'none',

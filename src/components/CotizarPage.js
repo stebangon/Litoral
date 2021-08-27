@@ -3,7 +3,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -24,7 +24,33 @@ import imgVendido from '../assets/Recursos - LITORAL-86.svg'; // with import
 import imgApartado from '../assets/Recursos - LITORAL-87.svg'; // with import
 import imgDesde from '../assets/Recursos - LITORAL-18.svg'; // with import
 
+import img1DeptoT1N1 from '../assets/deptot1n1/SALA.jpg';
+import img2DeptoT1N1 from '../assets/deptot1n1/RECÁMARA.jpg';
+import img3DeptoT1N1 from '../assets/deptot1n1/TERRAZA.jpg';
+
+import img1DeptoT2N2 from '../assets/deptot2n2/SALA.jpg';
+import img2DeptoT2N2 from '../assets/deptot2n2/RECÁMARA.jpg';
+import img3DeptoT2N2 from '../assets/deptot2n2/_TERRAZA.jpg';
+
+import img1DeptoT3N2 from '../assets/deptot3n2/SALA.jpg';
+import img2DeptoT3N2 from '../assets/deptot3n2/RECÁMARA.jpg';
+import img3DeptoT3N2 from '../assets/deptot3n2/TERRAZA.jpg';
+
+import img1DeptoT4N2 from '../assets/deptot4n2/SALA.jpg';
+import img2DeptoT4N2 from '../assets/deptot4n2/RECÁMARA.jpg';
+import img3DeptoT4N2 from '../assets/deptot4n2/_TERRAZA.jpg';
+
+import img1DeptoPHt1 from '../assets/deptoPHt1/ROOF.jpg';
+import img2DeptoPHt1 from '../assets/deptoPHt1/RECÁMARA.jpg';
+import img3DeptoPHt1 from '../assets/deptoPHt1/_TERRAZA.jpg';
+
+import img1DeptoPHt2 from '../assets/deptoPHt2/SALA.jpg';
+import img2DeptoPHt2 from '../assets/deptoPHt2/RECÁMARA.jpg';
+import img3DeptoPHt2 from '../assets/deptoPHt2/ROOF.jpg';
+
 function CotizarPage() {
+  const [tipodepto, setTipodepto] = useState('');
+  const [noclick, setNoclicks] = useState(0);
   const [departamentos, setDepartamentos] = useState([]);
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
@@ -34,56 +60,86 @@ function CotizarPage() {
   const [MAP, setMAP]  = useState ({
     areas: [],
   });
+  const [size, setSize] = useState([0, 0]);
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => {
+      window.removeEventListener('resize', updateSize)
+    };
+  }, []);
+  function renderImagenes() {
+    console.log('tipodepto',tipodepto);
+    switch (tipodepto) {
+      case 1:
+        return [img1DeptoT1N1, img2DeptoT1N1, img3DeptoT1N1];
+      case 2:
+        return [img1DeptoT2N2, img2DeptoT2N2, img3DeptoT2N2];
+      case 3:
+        return [img1DeptoT3N2, img2DeptoT3N2, img3DeptoT3N2];
+      case 4:
+        return [img1DeptoT4N2, img2DeptoT4N2, img3DeptoT4N2];
+      case 5:
+        return [img1DeptoPHt1, img2DeptoPHt1, img3DeptoPHt1];
+      case 6:
+        return [img1DeptoPHt2, img2DeptoPHt2, img3DeptoPHt2];
+      default:
+        return [img1DeptoT1N1, img2DeptoT1N1, img3DeptoT1N1];
+    }
+  }
   function getCoordenadas(id) {
     switch (id) {
       case 'piso1-r':
-        return [242, 465, 242, 512, 316, 512, 316, 465]; //
+        return [256, 320, 256, 355, 332, 355, 332, 320]; //
       case 'piso1-c':
-        return [168, 465, 168, 512, 240, 512, 240, 465]; //
+        return [178, 320, 178, 355, 252, 355, 252, 320]; //
       case 'piso1-l':
-        return [91, 465, 91, 512, 165, 512, 165, 465]; //
+        return [99, 320, 99, 355, 175, 355, 175, 320]; //
       case 'piso2-r':
-        return [242, 416, 242, 460, 316, 460, 316, 416]; //
+        return [256, 284, 256, 317, 332, 317, 332, 284]; //
       case 'piso2-c':
-        return [168, 416, 168, 460, 240, 460, 240, 416]; //
+        return [178, 284, 178, 317, 252, 317, 252, 284]; //
       case 'piso2-l':
-        return [91, 416, 91, 460, 165, 460, 165, 416]; //
+        return [99, 284, 99, 317, 175, 317, 175, 284]; //
       case 'piso3-r':
-        return [242, 364, 242, 411, 316, 411, 316, 364]; //
+        return [256, 247, 256, 280, 332, 280, 332, 247]; //
       case 'piso3-c':
-        return [168, 364, 168, 411, 240, 411, 240, 364]; //
+        return [178, 247, 178, 280, 252, 280, 252, 247]; //
       case 'piso3-l':
-        return [91, 364, 91, 411, 165, 411, 165, 364]; //
+        return [99, 247, 99, 280, 175, 280, 175, 247]; //
       case 'piso4-r':
-        return [242, 315, 242, 360, 316, 360, 316, 315]; //
+        return [256, 210, 256, 244, 332, 244, 332, 210]; //
       case 'piso4-c':
-        return [168, 315, 168, 360, 240, 360, 240, 315]; //
+        return [178, 210, 178, 244, 252, 244, 252, 210]; //
       case 'piso4-l':
-        return [91, 315, 91, 360, 165, 360, 165, 315]; //
+        return [99, 210, 99, 244, 175, 244, 175, 210]; //
       case 'piso5-r':
-        return [242, 266, 242, 312, 316, 312, 316, 266]; //
+        return [256, 174, 256, 207, 332, 207, 332, 174]; //
       case 'piso5-c':
-        return [168, 266, 168, 312, 240, 312, 240, 266]; //
+        return [178, 174, 178, 207, 252, 207, 252, 174]; //
       case 'piso5-l':
-        return [91, 266, 91, 312, 165, 312, 165, 266]; //
+        return [99, 174, 99, 207, 175, 207, 175, 174]; //
       case 'piso6-r':
-        return [242, 213, 242, 260, 316, 260, 316, 213]; //
+        return [256, 138, 256, 170, 332, 170, 332, 138]; //
       case 'piso6-c':
-        return [168, 213, 168, 260, 240, 260, 240, 213]; //
+        return [178, 138, 178, 170, 252, 170, 252, 138]; //
       case 'piso6-l':
-        return [91, 213, 91, 260, 165, 260, 165, 213]; //
+        return [99, 138, 99, 170, 175, 170, 175, 138]; //
       case 'piso7-r':
-        return [242, 165, 242, 211, 316, 211, 316, 165]; //
+        return [256, 101, 256, 134, 332, 134, 332, 101]; //
       case 'piso7-c':
-        return [168, 165, 168, 211, 240, 211, 240, 165]; //
+        return [178, 101, 178, 134, 252, 134, 252, 101]; //
       case 'piso7-l':
-        return [91, 165, 91, 211, 165, 211, 165, 165]; //
+        return [99, 101, 99, 134, 175, 134, 175, 101]; //
       case 'pisoph-r':
-        return [242, 60, 242, 160, 316, 160, 316, 60]; //
+        return [256, 20, 256, 97, 332, 97, 332, 20]; //
       case 'pisoph-c':
-        return [168, 60, 168, 160, 240, 160, 240, 60]; //
+        return [178, 20, 178, 97, 252, 97, 252, 20]; //
       case 'pisoph-l':
-        return [91, 60, 91, 160, 165, 160, 165, 60]; //
+        return [99, 20, 99, 97, 175, 97, 175, 20]; //
       default:
         return [0, 0, 0, 0, 0, 0, 0, 0]; //
     }
@@ -91,32 +147,91 @@ function CotizarPage() {
   function getColorCuadro(estatus) {
     switch (estatus) {
       case 'disponible':
-        return 'rgba(0,0,0,0.1)' // blanco
+        return 'rgba(0,0,0,0.1)'; // blanco
       case 'vendido':
-        return 'rgba(255,0,0,0.6)' // rojo
+        return 'rgba(255,0,0,0.4)'; // rojo
       case 'apartado':
-        return 'rgba(255,215,0,0.6)' // amarillo
+        return 'rgba(255,215,0,0.4)'; // amarillo
       default:
-        return 'rgba(0,0,0,0.1)'
+        return 'rgba(0,0,0,0.1)';
     }
   }
   function getColorIndicador(estatus) {
-    switch (estatus) {
-      case 'disponible':
-        return ''// blanco
-      case 'vendido':
-        return 'rgb(163,98,95)' // rojo
-      case 'apartado':
-        return 'rgb(218,165,32)' // amarillo
-      default:
-        return 'rgba(0,0,0,0.1)'
-    }
+    // switch (estatus) {
+    //   case 'disponible':
+    //     return '';// blanco
+    //   case 'vendido':
+    //     return 'rgb(163,98,95)'; // rojo
+    //   case 'apartado':
+    //     return 'rgb(218,165,32)'; // amarillo
+    //   default:
+    //     return 'rgba(0,0,0,0.1)';
+    // }
+    return ''; // rojo
   }
   const handleClick = (area) => {
+    console.log(area.tipo)
+    switch (area.tipo) {
+      case 'A1':
+      case 'C1':
+        setTipodepto(1);   
+        break;
+      case 'B1':
+        setTipodepto(2);
+        break;
+      case 'A2':
+      case 'C2':
+      case 'A3':
+      case 'C3':
+      case 'A4':
+      case 'C4':
+      case 'A5':
+      case 'C5':
+      case 'A6':
+      case 'C6':
+      case 'A7':
+      case 'C7':
+        setTipodepto(3);
+        break;
+      case 'B2':
+      case 'B3':
+      case 'B4':
+      case 'B5':
+      case 'B6':
+      case 'B7':
+        setTipodepto(4);
+        break;
+      case 'PH A':
+      case 'PH C':
+        setTipodepto(5);   
+        break;
+      case 'PH B':
+        setTipodepto(6);
+        break;
+      default:
+        break;
+    }
     setShowDetail(true);
     setArea(area);
   };
+  const handleImagenClics = () => {
+    switch (noclick) {
+      case 0:
+        setNoclicks(1);
+        break;
+      case 1:
+        setNoclicks(2);
+        break;
+      case 2:
+        setNoclicks(0);
+        break;
+      default:
+        setNoclicks(0);
+        break;
+    }
+  }
   useEffect(() => {
+    console.log(loadDepartamentos)
     fetch(loadDepartamentos, {
       method: 'GET',
       headers: {
@@ -150,6 +265,7 @@ function CotizarPage() {
               tipo : departamento[1].tipo,
               m2 : departamento[1].m2,
               estatus : departamento[1].estatus,
+              preFillColor : getColorCuadro(departamento[1].estatus), //color segun el estatus
             }
           )
         });
@@ -165,7 +281,7 @@ function CotizarPage() {
       <div id="menu">
         <NavMenu />
       </div>
-      <div style={{ height: '80px' }} />
+      <div style={{ height: '90px' }} />
       <Row className="cotizar-bg">
         <Col md={4} xs={12} className="align-self-center d-none d-sm-block">
           <Row className="pl-5 pb-5">
@@ -192,7 +308,7 @@ function CotizarPage() {
           <ImageMapper
             src={edificio}
             map={MAP}
-            height={630}
+            height={444}
             width={370}
             onClick={(area) => {
               handleClick(area);
@@ -262,19 +378,23 @@ function CotizarPage() {
         <Footer />
       </div>
       {area != null ? (
-          <Modal show={showDetail} centered>
+          <Modal show={showDetail} centered size="sm">
             <CardBody>
               <Col>
               <Row className="justify-content-center">
                 DEPARTAMENTO <br /><br />
               </Row>
               <Row className="justify-content-center">
-                Tipo: {area.tipo} <br />
+                <img
+                  width="300px"
+                  height="auto"
+                  src={renderImagenes()[noclick]}
+                  onClick={
+                    handleImagenClics
+                  }
+                />
               </Row>
-              <Row className="justify-content-center">
-                de {area.m2} M<sup>2</sup> <br />
-              </Row>
-              <Row className="justify-content-center">
+              <Row className="pt-3 justify-content-center">
                 Estatus: {area.estatus} <br />
               </Row>
               <Row className="justify-content-center">    
@@ -295,9 +415,11 @@ function CotizarPage() {
               </Col>
             </CardBody>
             <CardFooter>
-              <Button color="primary" onClick={() => setShowDetail(false)}>
-                Cerrar
-              </Button>
+              <Row className="justify-content-center">
+                <Button color="primary" onClick={() => setShowDetail(false)}>
+                  Cerrar
+                </Button>
+              </Row>
             </CardFooter>
           </Modal>
         ) : null}

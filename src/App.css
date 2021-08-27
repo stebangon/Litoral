@@ -264,7 +264,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(119px, -150px);
+    transform: translate(129px, -114px);
     z-index: 100;
   }
   .piso1-c {
@@ -272,7 +272,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(195px, -150px);
+    transform: translate(205px, -114px);
     z-index: 100;
   }
   .piso1-r {
@@ -280,7 +280,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(270px, -150px);
+    transform: translate(286px, -114px);
     z-index: 100;
   }
   .piso2-l {
@@ -288,7 +288,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(119px, -207px);
+    transform: translate(129px, -154px);
     z-index: 100;
   }
   .piso2-c {
@@ -296,7 +296,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(195px, -207px);
+    transform: translate(205px, -154px);
     z-index: 100;
   }
   .piso2-r {
@@ -304,7 +304,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(270px, -207px);
+    transform: translate(286px, -154px);
     z-index: 100;
   }
   .piso3-l {
@@ -312,7 +312,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(119px, -255px);
+    transform: translate(129px, -191px);
     z-index: 100;
   }
   .piso3-c {
@@ -320,7 +320,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(195px, -255px);
+    transform: translate(205px, -191px);
     z-index: 100;
   }
   .piso3-r {
@@ -328,7 +328,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(270px, -255px);
+    transform: translate(286px, -191px);
     z-index: 100;
   }
   .piso4-l {
@@ -336,7 +336,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(119px, -305px);
+    transform: translate(129px, -228px);
     z-index: 100;
   }
   .piso4-c {
@@ -344,7 +344,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(195px, -305px);
+    transform: translate(205px, -228px);
     z-index: 100;
   }
   .piso4-r {
@@ -352,7 +352,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(270px, -305px);
+    transform: translate(286px, -228px);
     z-index: 100;
   }
   .piso5-l {
@@ -360,7 +360,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(119px, -352px);
+    transform: translate(129px, -264px);
     z-index: 100;
   }
   .piso5-c {
@@ -368,7 +368,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(195px, -352px);
+    transform: translate(205px, -264px);
     z-index: 100;
   }
   .piso5-r {
@@ -376,7 +376,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(270px, -352px);
+    transform: translate(286px, -264px);
     z-index: 100;
   }
   .piso6-l {
@@ -384,7 +384,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(119px, -403px);
+    transform: translate(129px, -299px);
     z-index: 100;
   }
   .piso6-c {
@@ -392,7 +392,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(195px, -403px);
+    transform: translate(205px, -299px);
     z-index: 100;
   }
   .piso6-r {
@@ -400,7 +400,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(270px, -403px);
+    transform: translate(286px, -299px);
     z-index: 100;
   }
   .piso7-l {
@@ -408,7 +408,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(119px, -450px);
+    transform: translate(129px, -337px);
     z-index: 100;
   }
   .piso7-c {
@@ -416,7 +416,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(195px, -450px);
+    transform: translate(205px, -337px);
     z-index: 100;
   }
   .piso7-r {
@@ -424,7 +424,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(270px, -450px);
+    transform: translate(286px, -337px);
     z-index: 100;
   }
   .pisoph-l {
@@ -432,7 +432,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(119px, -528px);
+    transform: translate(129px, -400px);
     z-index: 100;
   }
   .pisoph-c {
@@ -440,7 +440,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(195px, -528px);
+    transform: translate(205px, -400px);
     z-index: 100;
   }
   .pisoph-r {
@@ -448,7 +448,7 @@
     position: absolute;
     height: 20px;
     width: 20px;
-    transform: translate(270px, -528px);
+    transform: translate(286px, -400px);
     z-index: 100;
   }
   /*Termina cuadros de departamentos*/

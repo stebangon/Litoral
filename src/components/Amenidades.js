@@ -2,19 +2,44 @@
 import React, { useState, useEffect ,useLayoutEffect } from 'react';
 import ReactTooltip from 'react-tooltip';
 import ImageMapper from 'react-img-mapper';
+
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { Modal } from 'react-bootstrap';
+import { CardBody, CardFooter } from 'reactstrap';
+import { Button } from '@material-ui/core';
+
+//Amenidades
+import imgAmeParking from '../assets/amenidades/IMAGENES_PARKING.png'; //punto 1
+import imgAmeGamesRoom from '../assets/amenidades/IMAGENES_GAMESROOM.png'; //punto 2
+import imgAmeAccesoControlado from '../assets/amenidades/IMAGENES_EDIFICIO.png'; //punto 3
+import imgAmeGYM from '../assets/amenidades/IMAGENES_GYM.png'; //punto 4
+import imgAmeLoungeBar from '../assets/amenidades/IMAGENES_LOBBY2.png'; //punto 5
+import imgAmeTerraza from '../assets/amenidades/IMAGENES_LOBBY1.png'; //punto 6
+import imgAmeBeachLounge from '../assets/amenidades/IMAGENES.png'; //punto 7
+import imgAmePiscinas from '../assets/amenidades/IMAGENES_PISCINAS.png'; //punto 8
+import imgAmePlaya from '../assets/amenidades/IMAGENES.png'; //punto 9
+import imgAmeKidsPool from '../assets/amenidades/IMAGENES_PISCINAS2.png'; //punto 10
+import imgAmeCasetaVigilancia from '../assets/amenidades/IMAGENES.png'; //punto 11
+import imgAmeBodegas from '../assets/amenidades/IMAGENES.png'; //punto 12
+import imgAmeBanos from '../assets/amenidades/IMAGENES.png'; //punto 13
+import imgAmePrivateBeach from '../assets/amenidades/IMAGENES_PROVATEBEACH.png'; //punto 14
+
 import imgPlano from '../assets/Plano Amenidades.jpg'; // with import
 
 function Amenidades() {
+  const [areaClickeada, setAreaClickeada] = useState('');
+  const [showRender, setShowRender] = useState(false);
+  // const handleShow = () => setShow(true);
   const [MAP, setMAP] = useState({
     name: "amenidades",
     areas: [
       {
         id: "punto1",
         titulo: 'PARKING & MOTOR LOBBY',
-        alt: 'PARKING & MOTOR LOBBY',
         shape : 'circle',
         strokeColor : 'rgba(21,76, 94, 0)',
-        coords:  [1065, 570, 50],
+        coords:  [1065, 610, 50],
         fillColor : 'rgba(21,76, 94, 0)',
         preFillColor: 'rgba(183, 98, 94, 0)',
       },
@@ -23,7 +48,7 @@ function Amenidades() {
         titulo: 'GAMES ROOM',
         shape : 'circle',
         strokeColor : 'rgba(21,76, 94, 0)',
-        coords:  [1275, 910, 50],
+        coords:  [1275, 955, 50],
         fillColor : 'rgba(21,76, 94, 0)',
         preFillColor: 'rgba(183, 98, 94, 0)',
       },
@@ -32,7 +57,7 @@ function Amenidades() {
         titulo: 'ACCESO CONTROLADO',
         shape : 'circle',
         strokeColor : 'rgba(21,76, 94, 0)',
-        coords:  [140, 645, 50],
+        coords:  [140, 690, 50],
         fillColor : 'rgba(21,76, 94, 0)',
         preFillColor: 'rgba(183, 98, 94, 0)',
       },
@@ -41,7 +66,7 @@ function Amenidades() {
         titulo: 'GIMNASIO',
         shape : 'circle',
         strokeColor : 'rgba(21,76, 94, 0)',
-        coords:  [1580, 1055, 50],
+        coords:  [1580, 1105, 50],
         fillColor : 'rgba(21,76, 94, 0)',
         preFillColor: 'rgba(183, 98, 94, 0)',
       },
@@ -50,7 +75,7 @@ function Amenidades() {
         titulo: 'LOUNGE BAR',
         shape : 'circle',
         strokeColor : 'rgba(21,76, 94, 0)',
-        coords:  [1645, 685, 50],
+        coords:  [1645, 735, 50],
         fillColor : 'rgba(21,76, 94, 0)',
         preFillColor: 'rgba(183, 98, 94, 0)',
       },
@@ -59,7 +84,7 @@ function Amenidades() {
         titulo: 'TERRAZA TECHADA',
         shape : 'circle',
         strokeColor : 'rgba(21,76, 94, 0)',
-        coords:  [1865, 715, 50],
+        coords:  [1865, 765, 50],
         fillColor : 'rgba(21,76, 94, 0)',
         preFillColor: 'rgba(183, 98, 94, 0)',
       },
@@ -68,7 +93,7 @@ function Amenidades() {
         titulo: 'BEACH LOUNGE',
         shape : 'circle',
         strokeColor : 'rgba(21,76, 94, 0)',
-        coords:  [2040, 465, 50],
+        coords:  [2040, 510, 50],
         fillColor : 'rgba(21,76, 94, 0)',
         preFillColor: 'rgba(183, 98, 94, 0)',
       },
@@ -77,7 +102,7 @@ function Amenidades() {
         titulo: 'PISCINAS',
         shape : 'circle',
         strokeColor : 'rgba(21,76, 94, 0)',
-        coords:  [2205, 725, 50],
+        coords:  [2200, 769, 50],
         fillColor : 'rgba(21,76, 94, 0)',
         preFillColor: 'rgba(183, 98, 94, 0)',
       },
@@ -86,7 +111,7 @@ function Amenidades() {
         titulo: 'AREA DE PLAYA',
         shape : 'circle',
         strokeColor : 'rgba(21,76, 94, 0)',
-        coords:  [2905, 655, 50],
+        coords:  [2905, 700, 50],
         fillColor : 'rgba(21,76, 94, 0)',
         preFillColor: 'rgba(183, 98, 94, 0)',
       },
@@ -95,7 +120,7 @@ function Amenidades() {
         titulo: 'PISCINA / KIDS POOL',
         shape : 'circle',
         strokeColor : 'rgba(21,76, 94, 0)',
-        coords:  [2095, 890, 50],
+        coords:  [2095, 940, 50],
         fillColor : 'rgba(21,76, 94, 0)',
         preFillColor: 'rgba(183, 98, 94, 0)',
       },
@@ -104,7 +129,7 @@ function Amenidades() {
         titulo: 'CASETA DE VIGILANCIA',
         shape : 'circle',
         strokeColor : 'rgba(21,76, 94, 0)',
-        coords:  [195, 470, 50],
+        coords:  [195, 520, 50],
         fillColor : 'rgba(21,76, 94, 0)',
         preFillColor: 'rgba(183, 98, 94, 0)',
       },
@@ -113,7 +138,7 @@ function Amenidades() {
         titulo: 'BODEGAS',
         shape : 'circle',
         strokeColor : 'rgba(21,76, 94, 0)',
-        coords:  [1610, 465, 50],
+        coords:  [1610, 505, 50],
         fillColor : 'rgba(21,76, 94, 0)',
         preFillColor: 'rgba(183, 98, 94, 0)',
       },
@@ -122,7 +147,7 @@ function Amenidades() {
         titulo: 'BAÑOS',
         shape : 'circle',
         strokeColor : 'rgba(21,76, 94, 0)',
-        coords:  [1775, 1005, 50],
+        coords:  [1778, 1050, 50],
         fillColor : 'rgba(21,76, 94, 0)',
         preFillColor: 'rgba(183, 98, 94, 0)',
       },
@@ -131,7 +156,7 @@ function Amenidades() {
         titulo: 'PRIVATE SUN BEACH',
         shape : 'circle',
         strokeColor : 'rgba(21,76, 94, 0)',
-        coords:  [2485, 655, 50],
+        coords:  [2488, 702, 50],
         fillColor : 'rgba(21,76, 94, 0)',
         preFillColor: 'rgba(183, 98, 94, 0)',
       },
@@ -140,7 +165,7 @@ function Amenidades() {
         titulo: 'ÁREA DE YOGA Y MEDITACIÓN',
         shape : 'circle',
         strokeColor : 'rgba(21,76, 94, 0)',
-        coords:  [2765, 455, 50],
+        coords:  [2765, 505, 50],
         fillColor : 'rgba(21,76, 94, 0)',
         preFillColor: 'rgba(183, 98, 94, 0)',
       },
@@ -184,135 +209,100 @@ function Amenidades() {
     tooltip.innerHTML = '';
   }
 
+  const handlerClic = (area) => {
+    setShowRender(true);
+    setAreaClickeada(area);
+  };
+
+  function renderImagenes(id) {
+    console.log(id);
+    switch (id) {
+      case 'punto1':
+        return imgAmeParking;
+      case 'punto2':
+        return imgAmeGamesRoom;
+      case 'punto3':
+        return imgAmeAccesoControlado;
+      case 'punto4':
+        return imgAmeGYM;
+      case 'punto5':
+        return imgAmeLoungeBar;
+      case 'punto6':
+        return imgAmeTerraza;
+      case 'punto7':
+        return imgAmeBeachLounge;
+      case 'punto8':
+        return imgAmePiscinas;
+      case 'punto9':
+        return imgAmePlaya;
+      case 'punto10':
+        return imgAmeKidsPool;
+      case 'punto11':
+        return imgAmeCasetaVigilancia;
+      case 'punto12':
+        return imgAmeBodegas;
+      case 'punto13':
+        return imgAmeBanos;
+      case 'punto14':
+        return imgAmePrivateBeach;
+      default:
+        return imgAmeAccesoControlado;  
+    }
+  }
+
   return (
     <div>
       <ImageMapper
         src={imgPlano}
         map={MAP}
-        //stayMultiHighlighted={true}
-        //stayHighlighted={true}
-        // active={true}
         width={size[0]}
         responsive={true}
         parentWidth={size[0]}
         onMouseEnter={(area) => {
+          // console.log('entro');
           handlerMouseIn(area);
         }}
         onMouseLeave={(area) => {
+          //console.log('salio');
           handlerMouseOut(area);
         }}
+        onClick={(area) => {
+          console.log('clic de bolita')
+          handlerClic(area);
+        }}
       />
-      <div id="myTooltip" style={{zIndex: "1000"}} />
-      {/* <div
-        id="punto1"
-        className="punto1 d-none d-xl-block"
-        key="punto1"
-        style={{
-          backgroundColor: 'rgb(183, 98, 94)',
+      <div id="myTooltip" style={{zIndex: "1000"}} 
+        onClick={(area) => {
+          console.log('clic de popup');
+          handlerClic(area);
         }}
-        data-tip
-        data-for="punto1"
-      /> */}
-      {/* <ReactTooltip effect="solid" border={true} type="light">
-        PARKING & MOTOR LOBBY
-      </ReactTooltip> */}
-      {/* <div
-        id="punto2"
-        className="punto2 d-none d-xl-block"
-        key="punto2"
-        style={{
-          backgroundColor: 'rgb(183, 98, 94)',
-        }}
-        data-tip
-        data-for="punto2"
-      /> */}
-      {/* <ReactTooltip effect="solid" border={true} type="light">
-        GAMES ROOM
-      </ReactTooltip> */}
-      {/* <div
-        className="punto3 d-none d-xl-block"
-        key="punto3"
-        style={{
-          backgroundColor: 'rgb(183, 98, 94)',
-        }}
-        data-tip
-        data-for="punto3"
-      /> */}
-      {/* <ReactTooltip effect="solid" border={true} type="light">
-        LOBBY
-      </ReactTooltip> */}
-      {/* <div
-        className="punto4 d-none d-xl-block"
-        key="punto4"
-        style={{
-          backgroundColor: 'rgb(183, 98, 94)',
-        }}
-        data-tip
-        data-for="punto4"
-      /> */}
-      {/* <ReactTooltip effect="solid" border={true} type="light">
-        GIMNASIO
-      </ReactTooltip> */}
-      {/* <div
-        className="punto5 d-none d-xl-block"
-        key="punto5"
-        style={{
-          backgroundColor: 'rgb(183, 98, 94)',
-        }}
-        data-tip
-        data-for="punto5"
-      /> */}
-      {/* <ReactTooltip effect="solid" border={true} type="light">
-        LOUNGE BAR
-      </ReactTooltip> */}
-      {/* <div
-        className="punto6 d-none d-xl-block"
-        key="punto6"
-        style={{
-          backgroundColor: 'rgb(183, 98, 94)',
-        }}
-        data-tip
-        data-for="punto6"
-      /> */}
-      {/* <ReactTooltip effect="solid" border={true} type="light">
-        TERRAZA
-      </ReactTooltip> */}
-      {/* <div
-        className="punto7 d-none d-xl-block"
-        key="punto7"
-        style={{
-          backgroundColor: 'rgb(183, 98, 94)',
-        }}
-        data-tip
-        data-for="punto7"
-      /> */}
-      {/* <ReactTooltip effect="solid" border={true} type="light">
-        BEACH LOUNGE
-      </ReactTooltip> */}
-      {/* <div
-        className="punto8 d-none d-xl-block"
-        key="punto8"
-        style={{
-          backgroundColor: 'rgb(183, 98, 94)',
-        }}
-        data-tip
-        data-for="punto8"
-      /> */}
-      {/* <ReactTooltip effect="solid" border={true} type="light">
-        PISCINAS
-      </ReactTooltip> */}
-      {/* <div
-        className="punto9 d-none d-xl-block"
-        key="punto9"
-        style={{
-          backgroundColor: 'rgb(183, 98, 94)',
-        }}
-        data-tip
-        data-for="punto9"
-      /> */}
-      {/* <ReactTooltip effect="solid" border={true} type="light">
-        PLAYA
-      </ReactTooltip> */}
+      />
+      <Modal show={showRender} centered size="sm">
+        <CardBody>
+          <Col>
+            <Row className="justify-content-center">
+              AMENIDADES <br /><br />
+            </Row>
+            <Row className="justify-content-center">
+              <img
+                width="300px"
+                height="auto"
+                src={renderImagenes(areaClickeada.id)}
+              />
+            </Row>
+            <Row className="pt-3 justify-content-center">
+              {areaClickeada.titulo} <br />
+            </Row>
+          </Col>
+        </CardBody>
+        <CardFooter>
+          <Row className="justify-content-center">
+            <Button color="primary" onClick={() => setShowRender(false)}>
+              Cerrar
+            </Button>
+          </Row>
+        </CardFooter>
+      </Modal>
     </div>
   );
 }
